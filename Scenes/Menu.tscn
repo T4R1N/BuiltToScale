@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4up0pnegn10h"]
+[gd_scene load_steps=4 format=3 uid="uid://b3h4k8vu6qd6f"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_mb1o1"]
-[ext_resource type="Theme" path="res://Assets/MainGUI.tres" id="2_6kxsr"]
+[ext_resource type="Theme" uid="uid://cwpm0manfxk76" path="res://Assets/MainGUI.tres" id="2_6kxsr"]
 [ext_resource type="Texture2D" uid="uid://q4yktb85hpcg" path="res://Assets/gmtk2024-logo.png" id="3_p42c6"]
 
 [node name="Menu" type="Control"]

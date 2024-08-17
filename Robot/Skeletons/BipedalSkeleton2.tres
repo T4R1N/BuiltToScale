@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="RobotSkeleton" load_steps=3 format=3 uid="uid://ch4xmenrjg6p2"]
+
+[ext_resource type="Resource" uid="uid://bk58yb7yvb4bk" path="res://Robot/Augments/DoubleJumper.tres" id="1_228cp"]
+[ext_resource type="Script" path="res://Robot/Skeletons/RobotSkeleton.gd" id="2_l5smu"]
+
+[resource]
+script = ExtResource("2_l5smu")
+arms = Array[Resource("res://Robot/Limbs/Arms/RobotArm.gd")]([null, null])
+legs = Array[Resource("res://Robot/Limbs/Legs/RobotLeg.gd")]([null, null])
+augments = Array[Resource("res://Robot/Augments/RobotAugment.gd")]([ExtResource("1_228cp"), null])
+mass = 0.0
+sprite = NodePath("")

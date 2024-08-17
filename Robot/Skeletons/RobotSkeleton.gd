@@ -1,4 +1,4 @@
-extends Resource
+extends AbstractRobotPiece
 
 class_name RobotSkeleton
 

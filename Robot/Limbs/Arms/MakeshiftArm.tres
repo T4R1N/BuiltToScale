@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="RobotArm" load_steps=2 format=3 uid="uid://b2oeymhf5384d"]
+
+[ext_resource type="Script" path="res://Robot/Limbs/Arms/RobotArm.gd" id="1_8n7dn"]
+
+[resource]
+script = ExtResource("1_8n7dn")
+mass = 0.0
+sprite = NodePath("")

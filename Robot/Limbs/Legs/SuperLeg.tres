@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RobotLeg" load_steps=2 format=3 uid="uid://ccs1cm76xsypy"]
+
+[ext_resource type="Script" path="res://Robot/Limbs/Legs/RobotLeg.gd" id="1_xxfpx"]
+
+[resource]
+script = ExtResource("1_xxfpx")
+speed_boost = 200.0
+accel_boost = 800.0
+type = ""
+mass = 0.0
+sprite = NodePath("")

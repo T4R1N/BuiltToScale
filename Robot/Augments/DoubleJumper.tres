@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="RobotAugment" load_steps=2 format=3 uid="uid://bk58yb7yvb4bk"]
+
+[ext_resource type="Script" path="res://Robot/Augments/RobotAugment.gd" id="1_wpoo1"]
+
+[resource]
+script = ExtResource("1_wpoo1")
+extra_jumps = 1
+mass = 0.0
+sprite = NodePath("")
