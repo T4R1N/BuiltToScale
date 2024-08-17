@@ -5,24 +5,25 @@ class_name Player
 @export var skeleton: RobotSkeleton
 
 var num_jumps = 1
-var jumps = num_jumps
-var JUMP_VELOCITY = -600.0
+var additional_jumps = num_jumps
+var time_since_jump = INF
+var time_since_grounded = INF
+var JUMP_VELOCITY = -700.0
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 1600
 
 var acceleration = 3000.0
 var maxSpeed = 800.0
 var grapple_strength = 400.0
 var cur_grap: float
+var hp: float
 
 var can_move_in_air = true # For use with augments
 var can_walk_to_climb = false # Spiderbody
-var cancel_jump = false
+var cancel_jump = true
 
 @onready var mass = skeleton.mass
 @onready var max_hp = skeleton.durability
-var hp: float
 @onready var ingame_ui = $"../IngameUI"
 
 func build():
@@ -84,15 +85,27 @@ func _physics_process(delta):
 		else:
 			gravity = 1600
 		velocity.y += gravity * delta
+		time_since_grounded += delta
 	else:
-		jumps = num_jumps # resets to max jump value
-	# Handle jump.
-	if Input.is_action_just_pressed("Jump") and jumps > 0:
-		jumps -= 1
+		additional_jumps = num_jumps # resets to max jump value
+		time_since_grounded = 0
+	
+	
+	# Handle jump input allowing for jump buffering.
+	if Input.is_action_just_pressed("Jump"):
+		time_since_jump = 0
+	else:
+		time_since_jump += delta
+	
+	if time_since_jump < 0.25 and time_since_grounded < 0.15:
+		velocity.y = JUMP_VELOCITY
+	elif time_since_jump == 0 and additional_jumps > 0:
+		additional_jumps -= 1
 		velocity.y = JUMP_VELOCITY
 		
-	if cancel_jump and velocity.y < 0 and Input.is_action_just_released("Jump"): # Does not execute if falling; only activates if cancelling a jump
-		velocity.y = 0
+		
+	if cancel_jump and velocity.y < 0 and !Input.is_action_pressed("Jump"): # Does not execute if falling; only activates if cancelling a jump
+		velocity.y -= JUMP_VELOCITY * delta
 	
 	# Acceleration and deceleration
 	if is_on_floor():
