@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://ujrl0r23bgjd"]
 
-[ext_resource type="PackedScene" uid="uid://b3h4k8vu6qd6f" path="res://Scenes/Menu.tscn" id="1_n5yqj"]
+[ext_resource type="PackedScene" uid="uid://c4up0pnegn10h" path="res://Scenes/Menu.tscn" id="1_n5yqj"]
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_nqirl"]
-[ext_resource type="PackedScene" uid="uid://cgmocoowxewlq" path="res://Scenes/Stage.tscn" id="1_wvxyk"]
-[ext_resource type="PackedScene" uid="uid://fxmea856d6lt" path="res://Scenes/TransitionScreen.tscn" id="2_jwfr8"]
+[ext_resource type="PackedScene" uid="uid://xjci2p0oquym" path="res://Scenes/Stage.tscn" id="1_wvxyk"]
+[ext_resource type="PackedScene" path="res://Scenes/TransitionScreen.tscn" id="2_jwfr8"]
 [ext_resource type="AudioStream" uid="uid://dehob6agso060" path="res://Assets/t4-DesignedToClimb.ogg" id="5_rmmw2"]
 
 [sub_resource type="Animation" id="Animation_i2uau"]
@@ -83,7 +83,6 @@ libraries = {
 
 [node name="Jukebox" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_rmmw2")
-bus = &"Music"
 
 [connection signal="begin" from="CurrentScene/Menu" to="." method="_on_menu_begin"]
 [connection signal="transitioned" from="TransitionScreen" to="." method="_on_transition_screen_transitioned"]
