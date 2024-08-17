@@ -4,4 +4,6 @@
 
 [resource]
 Button/fonts/font = ExtResource("1_dwnli")
+Label/font_sizes/font_size = 36
 Label/fonts/font = ExtResource("1_dwnli")
+ProgressBar/fonts/font = ExtResource("1_dwnli")

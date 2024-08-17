@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="RobotSkeleton" load_steps=6 format=3 uid="uid://c6mbuv2usj2vh"]
+
+[ext_resource type="Resource" uid="uid://b2oeymhf5384d" path="res://Robot/Limbs/Arms/MakeshiftArm.tres" id="1_ujd1g"]
+[ext_resource type="Resource" uid="uid://d0oc4pdcdwgvt" path="res://Robot/Limbs/Arms/SuperArm.tres" id="2_38x5k"]
+[ext_resource type="Resource" uid="uid://bk58yb7yvb4bk" path="res://Robot/Augments/DoubleJumper.tres" id="3_1mj68"]
+[ext_resource type="Resource" uid="uid://ccs1cm76xsypy" path="res://Robot/Limbs/Legs/SuperLeg.tres" id="4_0tqg1"]
+[ext_resource type="Script" path="res://Robot/Skeletons/RobotSkeleton.gd" id="5_3f0mr"]
+
+[resource]
+script = ExtResource("5_3f0mr")
+arms = Array[Resource("res://Robot/Limbs/Arms/RobotArm.gd")]([ExtResource("1_ujd1g"), ExtResource("2_38x5k")])
+legs = Array[Resource("res://Robot/Limbs/Legs/RobotLeg.gd")]([ExtResource("4_0tqg1"), ExtResource("4_0tqg1")])
+augments = Array[Resource("res://Robot/Augments/RobotAugment.gd")]([ExtResource("3_1mj68"), null])
+mass = 5.0
+durability = 10.0
+sprite = NodePath("")

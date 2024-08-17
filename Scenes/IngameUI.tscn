@@ -1,0 +1,124 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca15o1d2nemi6"]
+
+[ext_resource type="Script" path="res://Scenes/IngameUI.gd" id="1_6dkuj"]
+[ext_resource type="Theme" uid="uid://cwpm0manfxk76" path="res://Assets/MainGUI.tres" id="1_k8x0y"]
+[ext_resource type="Script" path="res://Scenes/AugContainer.gd" id="3_0c2sh"]
+
+[node name="IngameUI" type="CanvasLayer"]
+script = ExtResource("1_6dkuj")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DataContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 223.0
+offset_bottom = 294.0
+
+[node name="DuraLabel" type="Label" parent="Control/DataContainer"]
+layout_mode = 2
+theme = ExtResource("1_k8x0y")
+text = "Durability:"
+
+[node name="MassLabel" type="Label" parent="Control/DataContainer"]
+layout_mode = 2
+theme = ExtResource("1_k8x0y")
+text = "Mass:"
+
+[node name="MinorStatContainer" type="VBoxContainer" parent="Control/DataContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Speed" type="Label" parent="Control/DataContainer/MinorStatContainer"]
+layout_mode = 2
+theme = ExtResource("1_k8x0y")
+theme_override_font_sizes/font_size = 24
+text = "speed:"
+
+[node name="Jump" type="Label" parent="Control/DataContainer/MinorStatContainer"]
+layout_mode = 2
+theme = ExtResource("1_k8x0y")
+theme_override_font_sizes/font_size = 24
+text = "jump_strength:"
+
+[node name="Traction" type="Label" parent="Control/DataContainer/MinorStatContainer"]
+layout_mode = 2
+theme = ExtResource("1_k8x0y")
+theme_override_font_sizes/font_size = 24
+text = "traction:"
+
+[node name="Grapple" type="Label" parent="Control/DataContainer/MinorStatContainer"]
+layout_mode = 2
+theme = ExtResource("1_k8x0y")
+theme_override_font_sizes/font_size = 24
+text = "grapple_strength:"
+
+[node name="OtherContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -132.0
+offset_right = -6.0
+offset_bottom = 251.0
+grow_horizontal = 0
+
+[node name="HPBar" type="ProgressBar" parent="Control/OtherContainer"]
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+theme = ExtResource("1_k8x0y")
+fill_mode = 3
+show_percentage = false
+
+[node name="AugContainer" type="VBoxContainer" parent="Control/OtherContainer"]
+layout_mode = 2
+script = ExtResource("3_0c2sh")
+
+[node name="Label" type="Label" parent="Control/OtherContainer/AugContainer"]
+layout_mode = 2
+theme = ExtResource("1_k8x0y")
+text = "Aug1"
+
+[node name="AugmentBar1" type="ProgressBar" parent="Control/OtherContainer/AugContainer"]
+layout_mode = 2
+theme = ExtResource("1_k8x0y")
+
+[node name="Label2" type="Label" parent="Control/OtherContainer/AugContainer"]
+layout_mode = 2
+theme = ExtResource("1_k8x0y")
+text = "Aug2"
+
+[node name="AugmentBar2" type="ProgressBar" parent="Control/OtherContainer/AugContainer"]
+layout_mode = 2
+theme = ExtResource("1_k8x0y")
+
+[node name="GrappleContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="GrappleStrengthL" type="ProgressBar" parent="Control/GrappleContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("1_k8x0y")
+fill_mode = 1
+show_percentage = false
+
+[node name="GrappleStrengthR" type="ProgressBar" parent="Control/GrappleContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("1_k8x0y")
+show_percentage = false

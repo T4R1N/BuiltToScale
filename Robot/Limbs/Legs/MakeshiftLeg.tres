@@ -7,5 +7,6 @@ script = ExtResource("1_djs3t")
 speed_boost = 0.0
 accel_boost = 0.0
 type = ""
-mass = 0.0
+mass = 2.0
+durability = 3.0
 sprite = NodePath("")

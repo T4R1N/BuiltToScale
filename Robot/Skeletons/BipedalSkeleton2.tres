@@ -9,4 +9,5 @@ arms = Array[Resource("res://Robot/Limbs/Arms/RobotArm.gd")]([null, null])
 legs = Array[Resource("res://Robot/Limbs/Legs/RobotLeg.gd")]([null, null])
 augments = Array[Resource("res://Robot/Augments/RobotAugment.gd")]([ExtResource("1_228cp"), null])
 mass = 0.0
+durability = 0.0
 sprite = NodePath("")

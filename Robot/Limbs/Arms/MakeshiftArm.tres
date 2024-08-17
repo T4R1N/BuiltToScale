@@ -4,5 +4,7 @@
 
 [resource]
 script = ExtResource("1_8n7dn")
-mass = 0.0
+grapple_strength = 100.0
+mass = 2.0
+durability = 3.0
 sprite = NodePath("")

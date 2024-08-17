@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_6liqm"]
 [ext_resource type="PackedScene" uid="uid://xjci2p0oquym" path="res://Scenes/Stage.tscn" id="2_paj0h"]
-[ext_resource type="PackedScene" uid="uid://c4up0pnegn10h" path="res://Scenes/Menu.tscn" id="3_xmxm3"]
-[ext_resource type="PackedScene" path="res://Scenes/TransitionScreen.tscn" id="4_k3c3p"]
+[ext_resource type="PackedScene" uid="uid://b3h4k8vu6qd6f" path="res://Scenes/Menu.tscn" id="3_xmxm3"]
+[ext_resource type="PackedScene" uid="uid://fxmea856d6lt" path="res://Scenes/TransitionScreen.tscn" id="4_k3c3p"]
 [ext_resource type="AudioStream" uid="uid://dehob6agso060" path="res://Assets/t4-DesignedToClimb.ogg" id="5_hxank"]
 
 [sub_resource type="Animation" id="Animation_i2uau"]

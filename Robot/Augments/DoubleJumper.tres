@@ -5,5 +5,6 @@
 [resource]
 script = ExtResource("1_wpoo1")
 extra_jumps = 1
-mass = 0.0
+mass = 6.0
+durability = 3.0
 sprite = NodePath("")

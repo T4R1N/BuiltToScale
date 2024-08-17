@@ -6,6 +6,8 @@
 script = ExtResource("1_xxfpx")
 speed_boost = 200.0
 accel_boost = 800.0
+jump_boost = 300.0
 type = ""
-mass = 0.0
+mass = 5.0
+durability = 8.0
 sprite = NodePath("")
