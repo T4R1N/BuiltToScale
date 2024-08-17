@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgmocoowxewlq"]
+[gd_scene load_steps=3 format=3 uid="uid://xjci2p0oquym"]
 
-[ext_resource type="PackedScene" uid="uid://lbttidtwr61x" path="res://Scenes/Player.tscn" id="1_mtinf"]
+[ext_resource type="PackedScene" uid="uid://lbttidtwr61x" path="res://Scenes/player.tscn" id="1_mtinf"]
+[ext_resource type="PackedScene" uid="uid://c5eghw8nwfu8p" path="res://Scenes/platform.tscn" id="2_7slog"]
 
 [node name="Stage" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_mtinf")]
+position = Vector2(555, 177)
+
+[node name="platform" parent="." instance=ExtResource("2_7slog")]
+position = Vector2(579, 583)
+scale = Vector2(10.5368, 1.19439)
