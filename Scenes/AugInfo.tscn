@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://byf5eu43xikv7"]
+
+[ext_resource type="Script" path="res://Scenes/AugInfo.gd" id="1_7ymrm"]
+[ext_resource type="Theme" uid="uid://cwpm0manfxk76" path="res://Assets/MainGUI.tres" id="1_miy2a"]
+
+[node name="AugInfo" type="Control"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7ymrm")
+
+[node name="Label" type="Label" parent="."]
+theme = ExtResource("1_miy2a")
+text = "Aug1"
+
+[node name="AugmentBar" type="ProgressBar" parent="."]
+offset_left = 2.0
+offset_top = 45.0
+offset_right = 84.0
+offset_bottom = 69.0
+theme = ExtResource("1_miy2a")

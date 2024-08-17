@@ -18,8 +18,11 @@ func set_gui_label(which: String, data: float):
 		"Grapple":
 			$Control/DataContainer/MinorStatContainer/Grapple.text = "grapple_strength: " + str(data)
 
-func set_aug_bar():
-	pass
+func make_aug(aug: RobotAugment):
+	$Control/OtherContainer/AugContainer.create_aug_info_ui(aug)
 	
 func set_grapple_bar():
 	pass
+	
+func set_health_bar(data: float):
+	$Control/OtherContainer/HPBar.value = data

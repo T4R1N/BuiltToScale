@@ -5,6 +5,8 @@
 [resource]
 script = ExtResource("1_wpoo1")
 extra_jumps = 1
+do_jump_cancel = false
 mass = 6.0
 durability = 3.0
 sprite = NodePath("")
+type = "Jump-Dubbler"

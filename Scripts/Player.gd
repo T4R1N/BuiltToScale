@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 @export var skeleton: RobotSkeleton
 
 var num_jumps = 1
@@ -10,13 +12,13 @@ var JUMP_VELOCITY = -600.0
 var gravity = 1600
 
 var acceleration = 3000.0
-var maxSpeed = 500.0
+var maxSpeed = 800.0
 var grapple_strength = 400.0
 var cur_grap: float
 
 var can_move_in_air = true # For use with augments
 var can_walk_to_climb = false # Spiderbody
-var cancel_jump = true
+var cancel_jump = false
 
 @onready var mass = skeleton.mass
 @onready var max_hp = skeleton.durability
@@ -39,9 +41,13 @@ func build():
 
 	for i in skeleton.augments:
 		if not i == null:
+			ingame_ui.make_aug(i)
+			
 			mass += i.mass
 			max_hp += i.durability
 			num_jumps += i.extra_jumps
+			if i.do_jump_cancel:
+				cancel_jump = true
 	
 	hp = max_hp
 	
@@ -51,9 +57,22 @@ func build():
 	ingame_ui.set_gui_label("Jump", abs(JUMP_VELOCITY)) # non-negative
 	ingame_ui.set_gui_label("Traction", acceleration)
 	ingame_ui.set_gui_label("Grapple", grapple_strength)
+	
+	$SkeletonSprite.texture = skeleton.texture
+	match skeleton.designation:
+		"Bipedal":
+			pass
+		"Bipedal+":
+			pass
 
 func _ready():
 	build()
+
+func take_damage(dmg: float):
+	hp -= dmg
+
+func _process(delta):
+	ingame_ui.set_health_bar((hp / max_hp) * 100.0)
 
 func _physics_process(delta):
 	var direction = Input.get_axis("Left", "Right")
@@ -80,5 +99,10 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, maxSpeed * direction, acceleration * delta)
 	elif can_move_in_air && direction: # the && direction exists so you don't decelerate when not holding keys
 		velocity.x = move_toward(velocity.x, maxSpeed * direction, acceleration / 2 * delta)
+
+	if velocity.x > 0:
+		$SkeletonSprite.flip_h = false
+	elif velocity.x < 0:
+		$SkeletonSprite.flip_h = true
 
 	move_and_slide()
