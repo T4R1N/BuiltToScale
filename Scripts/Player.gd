@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var skeleton: RobotSkeleton
+
 const JUMP_VELOCITY = -600.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.

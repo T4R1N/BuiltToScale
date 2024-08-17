@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://xjci2p0oquym"]
+[gd_scene load_steps=4 format=3 uid="uid://cgmocoowxewlq"]
 
-[ext_resource type="PackedScene" uid="uid://lbttidtwr61x" path="res://Scenes/player.tscn" id="1_mtinf"]
-[ext_resource type="PackedScene" uid="uid://c5eghw8nwfu8p" path="res://Scenes/platform.tscn" id="2_7slog"]
+[ext_resource type="PackedScene" uid="uid://lbttidtwr61x" path="res://Scenes/Player.tscn" id="1_mtinf"]
+[ext_resource type="PackedScene" path="res://Scenes/platform.tscn" id="2_7slog"]
+[ext_resource type="Resource" uid="uid://ccrvgoqha86lu" path="res://Robot/Skeletons/BipedalSkeleton1.tres" id="2_lip1m"]
 
 [node name="Stage" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_mtinf")]
 position = Vector2(555, 177)
+skeleton = ExtResource("2_lip1m")
 
 [node name="platform" parent="." instance=ExtResource("2_7slog")]
 position = Vector2(579, 583)
