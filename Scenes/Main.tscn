@@ -1,37 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://ujrl0r23bgjd"]
 
-[ext_resource type="PackedScene" uid="uid://b3h4k8vu6qd6f" path="res://Scenes/Menu.tscn" id="1_n5yqj"]
+[ext_resource type="PackedScene" uid="uid://c4up0pnegn10h" path="res://Scenes/Menu.tscn" id="1_n5yqj"]
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_nqirl"]
-[ext_resource type="PackedScene" uid="uid://cgmocoowxewlq" path="res://Scenes/Stage.tscn" id="1_wvxyk"]
-[ext_resource type="PackedScene" uid="uid://fxmea856d6lt" path="res://Scenes/TransitionScreen.tscn" id="2_jwfr8"]
+[ext_resource type="PackedScene" uid="uid://xjci2p0oquym" path="res://Scenes/Stage.tscn" id="1_wvxyk"]
+[ext_resource type="PackedScene" path="res://Scenes/TransitionScreen.tscn" id="2_jwfr8"]
 [ext_resource type="AudioStream" uid="uid://dehob6agso060" path="res://Assets/t4-DesignedToClimb.ogg" id="5_rmmw2"]
-
-[sub_resource type="Animation" id="Animation_6oky3"]
-resource_name = "menu_fade_out"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Jukebox:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -47.954]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Jukebox:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
 
 [sub_resource type="Animation" id="Animation_i2uau"]
 length = 0.001
@@ -60,6 +33,33 @@ tracks/1/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_6oky3"]
+resource_name = "menu_fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Jukebox:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -47.954]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Jukebox:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qdco1"]
 _data = {
 "RESET": SubResource("Animation_i2uau"),
@@ -83,7 +83,6 @@ libraries = {
 
 [node name="Jukebox" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_rmmw2")
-bus = &"Music"
 
 [connection signal="begin" from="CurrentScene/Menu" to="." method="_on_menu_begin"]
 [connection signal="transitioned" from="TransitionScreen" to="." method="_on_transition_screen_transitioned"]

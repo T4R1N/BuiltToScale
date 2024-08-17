@@ -6,7 +6,7 @@ const JUMP_VELOCITY = -600.0
 var gravity = 1600
 
 var acceleration = 1000.0
-var maxSpeed = 300.0
+var maxSpeed = 500.0
 var canMoveInAir = true # For use with augments
 
 func _physics_process(delta):
@@ -14,6 +14,10 @@ func _physics_process(delta):
 	
 	# Gravity
 	if !is_on_floor():
+		if Input.is_action_pressed("Jump") and velocity.y < 0:
+			gravity = 1100
+		else:
+			gravity = 1600
 		velocity.y += gravity * delta
 
 	# Handle jump.

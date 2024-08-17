@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://xjci2p0oquym"]
+[gd_scene load_steps=4 format=3 uid="uid://xjci2p0oquym"]
 
 [ext_resource type="PackedScene" uid="uid://lbttidtwr61x" path="res://Scenes/player.tscn" id="1_mtinf"]
 [ext_resource type="PackedScene" uid="uid://c5eghw8nwfu8p" path="res://Scenes/platform.tscn" id="2_7slog"]
+[ext_resource type="PackedScene" uid="uid://ctf3x6h5lsns6" path="res://Scenes/camera.tscn" id="3_bqp2h"]
 
 [node name="Stage" type="Node2D"]
 
@@ -11,3 +12,5 @@ position = Vector2(555, 177)
 [node name="platform" parent="." instance=ExtResource("2_7slog")]
 position = Vector2(579, 583)
 scale = Vector2(10.5368, 1.19439)
+
+[node name="Camera" parent="." instance=ExtResource("3_bqp2h")]
