@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://lbttidtwr61x"]
+[gd_scene load_steps=6 format=3 uid="uid://lbttidtwr61x"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_wyj45"]
 [ext_resource type="Texture2D" uid="uid://det64rt03jw4j" path="res://Assets/MakeshiftSkeleton.png" id="2_7urbb"]
+[ext_resource type="Texture2D" uid="uid://djxay0ro0cjaf" path="res://Robot/Limbs/Arms/MakeshiftArm.png" id="3_jx6rc"]
+[ext_resource type="Texture2D" uid="uid://c8opdlu26ssbc" path="res://Robot/Limbs/Legs/MakeshiftLeg.png" id="4_430jv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5wt18"]
 radius = 41.0
@@ -18,3 +20,26 @@ shape = SubResource("CapsuleShape2D_5wt18")
 position = Vector2(2, -5)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("2_7urbb")
+
+[node name="Arm1" type="Sprite2D" parent="."]
+position = Vector2(-45, 21)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("3_jx6rc")
+
+[node name="Arm2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(41, 22)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("3_jx6rc")
+
+[node name="Arm3" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-17, 115)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("4_430jv")
+
+[node name="Arm4" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(27, 115)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("4_430jv")
