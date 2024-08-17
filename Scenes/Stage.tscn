@@ -1,17 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://xjci2p0oquym"]
 
-[ext_resource type="PackedScene" uid="uid://lbttidtwr61x" path="res://Scenes/player.tscn" id="1_mtinf"]
-[ext_resource type="PackedScene" uid="uid://c5eghw8nwfu8p" path="res://Scenes/platform.tscn" id="2_7slog"]
-[ext_resource type="PackedScene" uid="uid://ctf3x6h5lsns6" path="res://Scenes/camera.tscn" id="3_bqp2h"]
+[ext_resource type="PackedScene" uid="uid://lbttidtwr61x" path="res://Scenes/Player.tscn" id="1_yy72t"]
+[ext_resource type="PackedScene" uid="uid://c5eghw8nwfu8p" path="res://Scenes/Platform.tscn" id="2_1j0w4"]
+[ext_resource type="PackedScene" uid="uid://ctf3x6h5lsns6" path="res://Scenes/Camera.tscn" id="3_3c7m6"]
 
 [node name="Stage" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_mtinf")]
+[node name="Player" parent="." instance=ExtResource("1_yy72t")]
 position = Vector2(555, 177)
-skeleton = ExtResource("2_lip1m")
 
-[node name="platform" parent="." instance=ExtResource("2_7slog")]
+[node name="platform" parent="." instance=ExtResource("2_1j0w4")]
 position = Vector2(579, 583)
 scale = Vector2(10.5368, 1.19439)
 
-[node name="Camera" parent="." instance=ExtResource("3_bqp2h")]
+[node name="Camera" parent="." instance=ExtResource("3_3c7m6")]
