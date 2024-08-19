@@ -18,6 +18,8 @@ var grapple_strength = 400.0
 var cur_grap: float
 var hp: float
 
+var canClimb = false
+
 var can_move_in_air = false # For use with augments
 var can_walk_to_climb = false # Spiderbody
 var cancel_jump = false
@@ -119,3 +121,6 @@ func _physics_process(delta):
 		$SkeletonSprite.flip_h = true
 
 	move_and_slide()
+
+func set_canClimb(val: bool):
+	canClimb = val
