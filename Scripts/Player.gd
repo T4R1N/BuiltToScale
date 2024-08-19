@@ -76,25 +76,25 @@ func build():
 
 func flip_all_sprites():
 	if velocity.x > 0:
-		$SkeletonSprite.flip_h = false
-		$SkeletonSprite/Arm1.flip_h = false
-		$SkeletonSprite/Arm1.z_index = 0
-		$SkeletonSprite/Arm2.flip_h = false
-		$SkeletonSprite/Arm2.z_index = -1
-		$SkeletonSprite/Arm3.flip_h = false
-		$SkeletonSprite/Arm3.z_index = 0
-		$SkeletonSprite/Arm4.flip_h = false
-		$SkeletonSprite/Arm4.z_index = -1
+		$SkeletonSprite.scale.x = 0.2
+		#$SkeletonSprite/Arm1.flip_h = false
+		#$SkeletonSprite/Arm1.z_index = 0
+		#$SkeletonSprite/Arm2.flip_h = false
+		#$SkeletonSprite/Arm2.z_index = -1
+		#$SkeletonSprite/Arm3.flip_h = false
+		#$SkeletonSprite/Arm3.z_index = 0
+		#$SkeletonSprite/Arm4.flip_h = false
+		#$SkeletonSprite/Arm4.z_index = -1
 	elif velocity.x < 0:
-		$SkeletonSprite.flip_h = true
-		$SkeletonSprite/Arm1.flip_h = true
-		$SkeletonSprite/Arm1.z_index = -1
-		$SkeletonSprite/Arm2.flip_h = true
-		$SkeletonSprite/Arm2.z_index = 0
-		$SkeletonSprite/Arm3.flip_h = true
-		$SkeletonSprite/Arm3.z_index = -1
-		$SkeletonSprite/Arm4.flip_h = true
-		$SkeletonSprite/Arm4.z_index = 0
+		$SkeletonSprite.scale.x = -0.2
+		#$SkeletonSprite/Arm1.flip_h = true
+		#$SkeletonSprite/Arm1.z_index = -1
+		#$SkeletonSprite/Arm2.flip_h = true
+		#$SkeletonSprite/Arm2.z_index = 0
+		#$SkeletonSprite/Arm3.flip_h = true
+		#$SkeletonSprite/Arm3.z_index = -1
+		#$SkeletonSprite/Arm4.flip_h = true
+		#$SkeletonSprite/Arm4.z_index = 0
 
 func _ready():
 	build()
