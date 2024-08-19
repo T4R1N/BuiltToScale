@@ -413,7 +413,7 @@ position = Vector2(1664, -1728)
 scale = Vector2(-0.636063, 34.7229)
 
 [node name="Player" parent="." instance=ExtResource("1_yy72t")]
-position = Vector2(256, 448)
+position = Vector2(256, 320)
 skeleton = ExtResource("2_ge4ut")
 
 [node name="TileMap" type="TileMap" parent="."]

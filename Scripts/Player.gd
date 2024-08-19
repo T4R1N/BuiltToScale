@@ -76,7 +76,7 @@ func build():
 
 func flip_all_sprites():
 	if velocity.x > 0:
-		$SkeletonSprite.scale.x = 0.2
+		$SkeletonSprite.scale.x = 4
 		#$SkeletonSprite/Arm1.flip_h = false
 		#$SkeletonSprite/Arm1.z_index = 0
 		#$SkeletonSprite/Arm2.flip_h = false
@@ -86,7 +86,7 @@ func flip_all_sprites():
 		#$SkeletonSprite/Arm4.flip_h = false
 		#$SkeletonSprite/Arm4.z_index = -1
 	elif velocity.x < 0:
-		$SkeletonSprite.scale.x = -0.2
+		$SkeletonSprite.scale.x = -4
 		#$SkeletonSprite/Arm1.flip_h = true
 		#$SkeletonSprite/Arm1.z_index = -1
 		#$SkeletonSprite/Arm2.flip_h = true
@@ -110,9 +110,9 @@ func _physics_process(delta):
 	if velocity.y > 3000:
 		in_freefall = true
 		if velocity.x > 0:
-			$SkeletonSprite.rotation += delta * 20
+			$SkeletonSprite.rotation += (velocity.y - 3000) / 100 * delta
 		else:
-			$SkeletonSprite.rotation -= delta * 20
+			$SkeletonSprite.rotation -= (velocity.y - 3000) / 100 * delta
 		#var angleVector = Vector2(cos($SkeletonSprite.rotation), sin($SkeletonSprite.rotation))
 		#$SkeletonSprite.rotation += angleVector.angle_to(velocity)
 		velocity.y += gravity * delta
@@ -187,7 +187,13 @@ func _physics_process(delta):
 	if prevVelocity.y > JUMP_VELOCITY * -2.5 and is_on_floor():
 		take_damage(pow(prevVelocity.y / (JUMP_VELOCITY * -1), 2))
 	
+	# Animations and visuals
 	flip_all_sprites()
+	if abs(velocity.x) > 1:
+		$Animations.play("run_animation")
+		$Animations.speed_scale = abs(velocity.x) / 500
+	
+	
 	prevVelocity = velocity
 	move_and_slide()
 	
