@@ -3,4 +3,5 @@
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="1_niou5"]
 
 [node name="Camera" type="Camera2D"]
+process_callback = 0
 script = ExtResource("1_niou5")
