@@ -8,7 +8,7 @@ var num_jumps = 1
 var additional_jumps = num_jumps
 var time_since_jump = INF
 var time_since_grounded = INF
-var JUMP_VELOCITY = -700.0
+var JUMP_VELOCITY = -600.0
 
 var gravity = 1600
 
@@ -18,9 +18,9 @@ var grapple_strength = 400.0
 var cur_grap: float
 var hp: float
 
-var can_move_in_air = true # For use with augments
+var can_move_in_air = false # For use with augments
 var can_walk_to_climb = false # Spiderbody
-var cancel_jump = true
+var cancel_jump = false
 
 @onready var mass = skeleton.mass
 @onready var max_hp = skeleton.durability
@@ -80,10 +80,10 @@ func _physics_process(delta):
 	
 	# Gravity
 	if !is_on_floor():
-		if Input.is_action_pressed("Jump") and velocity.y < 0:
-			gravity = 1100
-		else:
-			gravity = 1600
+		#if Input.is_action_pressed("Jump") and velocity.y < 0:
+			#gravity = 1200
+		#else:
+			#gravity = 1600
 		velocity.y += gravity * delta
 		time_since_grounded += delta
 	else:
@@ -103,9 +103,9 @@ func _physics_process(delta):
 		additional_jumps -= 1
 		velocity.y = JUMP_VELOCITY
 		
-		
+		# Jump cancel
 	if cancel_jump and velocity.y < 0 and !Input.is_action_pressed("Jump"): # Does not execute if falling; only activates if cancelling a jump
-		velocity.y -= JUMP_VELOCITY * delta
+		velocity.y -= JUMP_VELOCITY * 4 * delta
 	
 	# Acceleration and deceleration
 	if is_on_floor():

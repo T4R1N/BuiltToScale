@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://lbttidtwr61x" path="res://Scenes/Player.tscn" id="1_yy72t"]
 [ext_resource type="PackedScene" uid="uid://bn8d0e3jntyoi" path="res://Scenes/Platform.tscn" id="2_1j0w4"]
-[ext_resource type="Resource" uid="uid://c6mbuv2usj2vh" path="res://Robot/Skeletons/SuperBipedal.tres" id="2_63eqt"]
+[ext_resource type="Resource" uid="uid://ccrvgoqha86lu" path="res://Robot/Skeletons/MakeshiftBipedal.tres" id="2_ge4ut"]
 [ext_resource type="PackedScene" uid="uid://ctf3x6h5lsns6" path="res://Scenes/Camera.tscn" id="3_3c7m6"]
 [ext_resource type="PackedScene" uid="uid://ca15o1d2nemi6" path="res://Scenes/IngameUI.tscn" id="5_6xs6y"]
 [ext_resource type="PackedScene" uid="uid://clnqneypla45e" path="res://Scenes/Sawblade.tscn" id="6_s7ot8"]
@@ -11,7 +11,7 @@
 
 [node name="Player" parent="." instance=ExtResource("1_yy72t")]
 position = Vector2(555, 177)
-skeleton = ExtResource("2_63eqt")
+skeleton = ExtResource("2_ge4ut")
 
 [node name="Platform" parent="." instance=ExtResource("2_1j0w4")]
 position = Vector2(552, 584)
