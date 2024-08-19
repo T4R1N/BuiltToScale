@@ -1,14 +1,12 @@
-[gd_resource type="Resource" script_class="RobotSkeleton" load_steps=5 format=3 uid="uid://ccrvgoqha86lu"]
+[gd_resource type="Resource" script_class="RobotSkeleton" load_steps=3 format=3 uid="uid://ccrvgoqha86lu"]
 
-[ext_resource type="Resource" uid="uid://b2oeymhf5384d" path="res://Robot/Limbs/Arms/MakeshiftArm.tres" id="1_5e7pv"]
-[ext_resource type="Resource" uid="uid://di4glhrmsc5ff" path="res://Robot/Limbs/Legs/MakeshiftLeg.tres" id="3_nydi8"]
 [ext_resource type="Texture2D" uid="uid://cnitut7r478vi" path="res://Assets/IMG_0105.png" id="4_w8l64"]
 [ext_resource type="Script" path="res://Robot/Skeletons/RobotSkeleton.gd" id="5_pps7t"]
 
 [resource]
 script = ExtResource("5_pps7t")
-arms = Array[Resource("res://Robot/Limbs/Arms/RobotArm.gd")]([ExtResource("1_5e7pv"), ExtResource("1_5e7pv")])
-legs = Array[Resource("res://Robot/Limbs/Legs/RobotLeg.gd")]([ExtResource("3_nydi8"), ExtResource("3_nydi8")])
+arms = Array[Resource("res://Robot/Limbs/Arms/RobotArm.gd")]([null, null])
+legs = Array[Resource("res://Robot/Limbs/Legs/RobotLeg.gd")]([null, null])
 augments = Array[Resource("res://Robot/Augments/RobotAugment.gd")]([null])
 designation = "Bipedal"
 mass = 5.0

@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmooe1628vo1y"]
+[gd_scene load_steps=6 format=3 uid="uid://bmooe1628vo1y"]
 
 [ext_resource type="Script" path="res://Inventory/InventoryDatabase.gd" id="1_kpvxv"]
+[ext_resource type="Resource" uid="uid://ccrvgoqha86lu" path="res://Robot/Skeletons/MakeshiftBipedal.tres" id="2_goo0s"]
+[ext_resource type="Resource" uid="uid://b2oeymhf5384d" path="res://Robot/Limbs/Arms/MakeshiftArm.tres" id="3_mnukb"]
+[ext_resource type="Resource" uid="uid://di4glhrmsc5ff" path="res://Robot/Limbs/Legs/MakeshiftLeg.tres" id="4_ybkst"]
+[ext_resource type="Resource" uid="uid://c6mbuv2usj2vh" path="res://Robot/Skeletons/SuperBipedal.tres" id="5_hdrsu"]
 
 [node name="InventoryDatabase" type="Node"]
 script = ExtResource("1_kpvxv")
+inf_inventory = Array[Resource("res://Robot/AbstractRobotPiece.gd")]([ExtResource("2_goo0s"), ExtResource("3_mnukb"), ExtResource("4_ybkst")])
+inventory = Array[Resource("res://Robot/AbstractRobotPiece.gd")]([null, null, ExtResource("4_ybkst"), null, ExtResource("2_goo0s"), null, null, null, null, null, null, null, null, null, ExtResource("5_hdrsu"), null, null, null, null, null])

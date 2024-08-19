@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0axy8g71slr8"]
+
+[ext_resource type="Script" path="res://Inventory/InvSlot.gd" id="1_gpgou"]
+[ext_resource type="Script" path="res://Inventory/EventButton.gd" id="2_th3fv"]
+
+[node name="InvSlot" type="Panel"]
+custom_minimum_size = Vector2(96, 96)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_gpgou")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 88.0
+offset_bottom = 89.0
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+button_mask = 3
+script = ExtResource("2_th3fv")
+
+[connection signal="left_click" from="Button" to="." method="_on_button_left_click"]
+[connection signal="right_click" from="Button" to="." method="_on_button_right_click"]

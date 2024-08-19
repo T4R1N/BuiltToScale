@@ -429,7 +429,27 @@ layer_0/tile_data = PackedInt32Array(524288, 0, 0, 524289, 524288, 0, 524290, 58
 [node name="Sawblade" parent="." instance=ExtResource("6_s7ot8")]
 position = Vector2(1332, 784)
 
+[node name="Sawblade2" parent="." instance=ExtResource("6_s7ot8")]
+position = Vector2(1947, 391)
+scale = Vector2(0.423988, 0.423988)
+
+[node name="Sawblade3" parent="." instance=ExtResource("6_s7ot8")]
+position = Vector2(1944, 151)
+scale = Vector2(0.423988, 0.423988)
+
 [node name="Item" parent="." instance=ExtResource("8_w1c17")]
 position = Vector2(1873, -279)
+
+[node name="Item2" parent="." instance=ExtResource("8_w1c17")]
+position = Vector2(867, 119)
+
+[node name="Item3" parent="." instance=ExtResource("8_w1c17")]
+position = Vector2(253, -239)
+
+[node name="Item4" parent="." instance=ExtResource("8_w1c17")]
+position = Vector2(499, -709)
+
+[node name="Item5" parent="." instance=ExtResource("8_w1c17")]
+position = Vector2(2128, 189)
 
 [connection signal="climb" from="GrabPoint" to="Player" method="set_canClimb"]
