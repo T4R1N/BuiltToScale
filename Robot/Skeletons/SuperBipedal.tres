@@ -17,4 +17,4 @@ designation = "Bipedal+"
 mass = 5.0
 durability = 10.0
 texture = ExtResource("7_vkopb")
-type = ""
+type = "Super"

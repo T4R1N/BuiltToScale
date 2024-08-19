@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="RobotSkeleton" load_steps=2 format=3 uid="uid://d07u3ar42q0xg"]
-
-[ext_resource type="Script" path="res://Robot/Skeletons/RobotSkeleton.gd" id="1_i3jgp"]
-
-[resource]
-script = ExtResource("1_i3jgp")
-arms = Array[Resource("res://Robot/RobotArm.gd")]([])
-legs = Array[Resource("res://Robot/RobotLeg.gd")]([null, null, null, null, null, null, null, null])
-augments = Array[Resource("res://Robot/RobotAugment.gd")]([null, null])

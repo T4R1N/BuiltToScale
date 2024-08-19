@@ -4,7 +4,7 @@ class_name Player
 
 @export var skeleton: RobotSkeleton
 
-var num_jumps = 1
+var num_jumps = 0
 var additional_jumps = num_jumps
 var time_since_jump = INF
 var time_since_grounded = INF
@@ -21,6 +21,8 @@ var hp: float
 var can_move_in_air = true # For use with augments
 var can_walk_to_climb = false # Spiderbody
 var cancel_jump = true
+
+var DEAD = false
 
 @onready var mass = skeleton.mass
 @onready var max_hp = skeleton.durability
@@ -65,6 +67,20 @@ func build():
 			pass
 		"Bipedal+":
 			pass
+
+func flip_all_sprites():
+	if velocity.x > 0:
+		$SkeletonSprite.flip_h = false
+		$Arm1.flip_h = false
+		$Arm2.flip_h = false
+		$Arm3.flip_h = false
+		$Arm4.flip_h = false
+	elif velocity.x < 0:
+		$SkeletonSprite.flip_h = true
+		$Arm1.flip_h = true
+		$Arm2.flip_h = true
+		$Arm3.flip_h = true
+		$Arm4.flip_h = true
 
 func _ready():
 	build()
@@ -113,9 +129,6 @@ func _physics_process(delta):
 	elif can_move_in_air && direction: # the && direction exists so you don't decelerate when not holding keys
 		velocity.x = move_toward(velocity.x, maxSpeed * direction, acceleration / 2 * delta)
 
-	if velocity.x > 0:
-		$SkeletonSprite.flip_h = false
-	elif velocity.x < 0:
-		$SkeletonSprite.flip_h = true
+	flip_all_sprites()
 
 	move_and_slide()

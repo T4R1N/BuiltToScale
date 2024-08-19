@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://lbttidtwr61x" path="res://Scenes/Player.tscn" id="1_yy72t"]
 [ext_resource type="PackedScene" uid="uid://bn8d0e3jntyoi" path="res://Scenes/Platform.tscn" id="2_1j0w4"]
-[ext_resource type="Resource" uid="uid://c6mbuv2usj2vh" path="res://Robot/Skeletons/SuperBipedal.tres" id="2_63eqt"]
+[ext_resource type="Resource" uid="uid://ccrvgoqha86lu" path="res://Robot/Skeletons/MakeshiftBipedal.tres" id="2_337ve"]
 [ext_resource type="PackedScene" uid="uid://ctf3x6h5lsns6" path="res://Scenes/Camera.tscn" id="3_3c7m6"]
 [ext_resource type="PackedScene" uid="uid://ca15o1d2nemi6" path="res://Scenes/IngameUI.tscn" id="5_6xs6y"]
 [ext_resource type="PackedScene" uid="uid://clnqneypla45e" path="res://Scenes/Sawblade.tscn" id="6_s7ot8"]
@@ -11,35 +11,45 @@
 
 [node name="Player" parent="." instance=ExtResource("1_yy72t")]
 position = Vector2(555, 177)
-skeleton = ExtResource("2_63eqt")
-
-[node name="Platform" parent="." instance=ExtResource("2_1j0w4")]
-position = Vector2(552, 584)
-scale = Vector2(7.8137, 0.824236)
-
-[node name="Platform2" parent="." instance=ExtResource("2_1j0w4")]
-position = Vector2(-191, -183)
-scale = Vector2(3.81211, -0.535069)
-
-[node name="Platform5" parent="." instance=ExtResource("2_1j0w4")]
-position = Vector2(2349, 337)
-scale = Vector2(3.81211, -0.535069)
-
-[node name="Platform3" parent="." instance=ExtResource("2_1j0w4")]
-position = Vector2(2499, 167)
-scale = Vector2(3.81211, -0.535069)
-
-[node name="Platform6" parent="." instance=ExtResource("2_1j0w4")]
-position = Vector2(1303, -110)
-scale = Vector2(3.81211, -0.535069)
-
-[node name="Platform4" parent="." instance=ExtResource("2_1j0w4")]
-position = Vector2(2060, 564)
-scale = Vector2(7.8137, 0.824236)
+skeleton = ExtResource("2_337ve")
 
 [node name="Camera" parent="." instance=ExtResource("3_3c7m6")]
 
 [node name="IngameUI" parent="." instance=ExtResource("5_6xs6y")]
 
-[node name="Sawblade" parent="." instance=ExtResource("6_s7ot8")]
+[node name="Ground" parent="." instance=ExtResource("2_1j0w4")]
+position = Vector2(1350, 8857)
+scale = Vector2(153.276, -67.747)
+
+[node name="StaticObjects" type="Node2D" parent="."]
+
+[node name="Platform" parent="StaticObjects" instance=ExtResource("2_1j0w4")]
+position = Vector2(497, 584)
+scale = Vector2(7.8137, 0.824236)
+
+[node name="Platform2" parent="StaticObjects" instance=ExtResource("2_1j0w4")]
+position = Vector2(-191, -183)
+scale = Vector2(3.81211, -0.535069)
+
+[node name="Platform5" parent="StaticObjects" instance=ExtResource("2_1j0w4")]
+position = Vector2(2349, 337)
+scale = Vector2(3.81211, -0.535069)
+
+[node name="Platform3" parent="StaticObjects" instance=ExtResource("2_1j0w4")]
+position = Vector2(2499, 167)
+scale = Vector2(3.81211, -0.535069)
+
+[node name="Platform7" parent="StaticObjects" instance=ExtResource("2_1j0w4")]
+position = Vector2(3326, -14)
+scale = Vector2(3.81211, -0.535069)
+
+[node name="Platform6" parent="StaticObjects" instance=ExtResource("2_1j0w4")]
+position = Vector2(1303, -110)
+scale = Vector2(3.81211, -0.535069)
+
+[node name="Platform4" parent="StaticObjects" instance=ExtResource("2_1j0w4")]
+position = Vector2(2060, 564)
+scale = Vector2(7.8137, 0.824236)
+
+[node name="Sawblade" parent="StaticObjects" instance=ExtResource("6_s7ot8")]
 position = Vector2(1332, 784)
