@@ -95,54 +95,59 @@ func _process(delta):
 	ingame_ui.set_health_bar((hp / max_hp) * 100.0)
 
 func _physics_process(delta):
-	var direction = Input.get_axis("Left", "Right")
-	
-	# Gravity
-	if !is_on_floor():
-		#if Input.is_action_pressed("Jump") and velocity.y < 0:
-			#gravity = 1200
-		#else:
-			#gravity = 1600
-		velocity.y += gravity * delta
-		time_since_grounded += delta
-	else:
-		additional_jumps = num_jumps # resets to max jump value
-		time_since_grounded = 0
-	
 	# Climbing
 	if canClimb and Input.is_action_pressed("Grab"):
-		if !isClimbing:
-			velocity = Vector2.ZERO
+		#if !isClimbing:
+			#velocity = Vector2.ZERO
 		isClimbing = true
 	else:
 		isClimbing = false
 	
 	if isClimbing:
 		gravity = 0
+		
+		var climbDir = Vector2(Input.get_axis("Left", "Right"), Input.get_axis("Jump", "Down")).normalized()
+		velocity = velocity.move_toward(maxSpeed / 2.0 * climbDir, acceleration * delta)
 	else:
 		gravity = 1600
-	
-	# Handle jump input allowing for jump buffering.
-	if Input.is_action_just_pressed("Jump"):
-		time_since_jump = 0
-	else:
-		time_since_jump += delta
-	
-	if time_since_jump < 0.25 and time_since_grounded < 0.15:
-		velocity.y = JUMP_VELOCITY
-	elif time_since_jump == 0 and additional_jumps > 0:
-		additional_jumps -= 1
-		velocity.y = JUMP_VELOCITY
 		
-		# Jump cancel
-	if cancel_jump and velocity.y < 0 and !Input.is_action_pressed("Jump"): # Does not execute if falling; only activates if cancelling a jump
-		velocity.y -= JUMP_VELOCITY * 4 * delta
-	
-	# Acceleration and deceleration
-	if is_on_floor():
-		velocity.x = move_toward(velocity.x, maxSpeed * direction, acceleration * delta)
-	elif can_move_in_air && direction: # the && direction exists so you don't decelerate when not holding keys
-		velocity.x = move_toward(velocity.x, maxSpeed * direction, acceleration / 2 * delta)
+		# BEGIN REGULAR PLATFORM CODE
+		var direction = Input.get_axis("Left", "Right")
+		
+		# Gravity
+		if !is_on_floor():
+			#if Input.is_action_pressed("Jump") and velocity.y < 0:
+				#gravity = 1200
+			#else:
+				#gravity = 1600
+			velocity.y += gravity * delta
+			time_since_grounded += delta
+		else:
+			additional_jumps = num_jumps # resets to max jump value
+			time_since_grounded = 0
+		
+		
+		# Handle jump input allowing for jump buffering.
+		if Input.is_action_just_pressed("Jump"):
+			time_since_jump = 0
+		else:
+			time_since_jump += delta
+		
+		if time_since_jump < 0.25 and time_since_grounded < 0.15:
+			velocity.y = JUMP_VELOCITY
+		elif time_since_jump == 0 and additional_jumps > 0:
+			additional_jumps -= 1
+			velocity.y = JUMP_VELOCITY
+			
+			# Jump cancel
+		if cancel_jump and velocity.y < 0 and !Input.is_action_pressed("Jump"): # Does not execute if falling; only activates if cancelling a jump
+			velocity.y -= JUMP_VELOCITY * 4 * delta
+		
+		# Acceleration and deceleration
+		if is_on_floor():
+			velocity.x = move_toward(velocity.x, maxSpeed * direction, acceleration * delta)
+		elif can_move_in_air && direction: # the && direction exists so you don't decelerate when not holding keys
+			velocity.x = move_toward(velocity.x, maxSpeed * direction, acceleration / 2 * delta)
 
 	flip_all_sprites()
 
