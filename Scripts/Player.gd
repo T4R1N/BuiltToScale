@@ -20,7 +20,7 @@ var hp: float
 
 var canClimb = false
 
-var can_move_in_air = false # For use with augments
+var can_move_in_air = true # For use with augments
 var can_walk_to_climb = false # Spiderbody
 var cancel_jump = false
 
