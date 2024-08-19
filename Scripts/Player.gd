@@ -107,7 +107,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	# Check for freefall
-	if velocity.y > 1000:
+	if velocity.y > 3000:
 		in_freefall = true
 		if velocity.x > 0:
 			$SkeletonSprite.rotation += delta * 20
