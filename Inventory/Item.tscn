@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgylcv4p02iem"]
+
+[ext_resource type="Script" path="res://Inventory/Item.gd" id="1_cf0ys"]
+[ext_resource type="Resource" uid="uid://bk58yb7yvb4bk" path="res://Robot/Augments/DoubleJumper.tres" id="2_kjqp4"]
+
+[node name="Item" type="CharacterBody2D"]
+scale = Vector2(3.5, 3.5)
+script = ExtResource("1_cf0ys")
+item = ExtResource("2_kjqp4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

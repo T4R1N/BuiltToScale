@@ -7,3 +7,5 @@ Button/fonts/font = ExtResource("1_dwnli")
 Label/font_sizes/font_size = 36
 Label/fonts/font = ExtResource("1_dwnli")
 ProgressBar/fonts/font = ExtResource("1_dwnli")
+RichTextLabel/font_sizes/normal_font_size = 48
+RichTextLabel/fonts/normal_font = ExtResource("1_dwnli")

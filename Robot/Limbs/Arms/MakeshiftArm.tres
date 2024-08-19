@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="RobotArm" load_steps=2 format=3 uid="uid://b2oeymhf5384d"]
+[gd_resource type="Resource" script_class="RobotArm" load_steps=3 format=3 uid="uid://b2oeymhf5384d"]
 
 [ext_resource type="Script" path="res://Robot/Limbs/Arms/RobotArm.gd" id="1_8n7dn"]
+[ext_resource type="Texture2D" uid="uid://djxay0ro0cjaf" path="res://Robot/Limbs/Arms/MakeshiftArm.png" id="2_h56g1"]
 
 [resource]
 script = ExtResource("1_8n7dn")
 grapple_strength = 100.0
 mass = 2.0
 durability = 3.0
-sprite = NodePath("")
+texture = ExtResource("2_h56g1")
+type = ""
