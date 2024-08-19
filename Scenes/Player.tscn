@@ -135,15 +135,15 @@ scale = Vector2(1, 1)
 texture = ExtResource("3_jx6rc")
 
 [node name="Arm3" type="Sprite2D" parent="SkeletonSprite"]
-position = Vector2(-14.0363, 28.9758)
-rotation = 1.28545
+position = Vector2(0.822309, 35.8442)
+rotation = -0.138494
 scale = Vector2(1, 1)
 texture = ExtResource("4_430jv")
 
 [node name="Arm4" type="Sprite2D" parent="SkeletonSprite"]
 z_index = -1
-position = Vector2(9.27825, 35.4596)
-rotation = -0.214178
+position = Vector2(-6.8876, 27.8587)
+rotation = 1.35191
 scale = Vector2(1, 1)
 texture = ExtResource("4_430jv")
 
