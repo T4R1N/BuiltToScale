@@ -27,5 +27,4 @@ shape = SubResource("RectangleShape2D_oifbb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupZone"]
 position = Vector2(0.857143, 0.142857)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_vakod")
