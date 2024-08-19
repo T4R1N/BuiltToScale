@@ -4,7 +4,7 @@ class_name Player
 
 @export var skeleton: RobotSkeleton
 
-var num_jumps = 0
+var num_jumps = 1
 var additional_jumps = num_jumps
 var time_since_jump = INF
 var time_since_grounded = INF
@@ -12,6 +12,8 @@ var JUMP_VELOCITY = -600.0
 
 var gravity = 1600
 var prevVelocity = Vector2.ZERO
+var in_freefall = false
+var scream_played = false
 
 var acceleration = 3000.0
 var maxSpeed = 800.0
@@ -75,16 +77,24 @@ func build():
 func flip_all_sprites():
 	if velocity.x > 0:
 		$SkeletonSprite.flip_h = false
-		$Arm1.flip_h = false
-		$Arm2.flip_h = false
-		$Arm3.flip_h = false
-		$Arm4.flip_h = false
+		$SkeletonSprite/Arm1.flip_h = false
+		$SkeletonSprite/Arm1.z_index = 0
+		$SkeletonSprite/Arm2.flip_h = false
+		$SkeletonSprite/Arm2.z_index = -1
+		$SkeletonSprite/Arm3.flip_h = false
+		$SkeletonSprite/Arm3.z_index = 0
+		$SkeletonSprite/Arm4.flip_h = false
+		$SkeletonSprite/Arm4.z_index = -1
 	elif velocity.x < 0:
 		$SkeletonSprite.flip_h = true
-		$Arm1.flip_h = true
-		$Arm2.flip_h = true
-		$Arm3.flip_h = true
-		$Arm4.flip_h = true
+		$SkeletonSprite/Arm1.flip_h = true
+		$SkeletonSprite/Arm1.z_index = -1
+		$SkeletonSprite/Arm2.flip_h = true
+		$SkeletonSprite/Arm2.z_index = 0
+		$SkeletonSprite/Arm3.flip_h = true
+		$SkeletonSprite/Arm3.z_index = -1
+		$SkeletonSprite/Arm4.flip_h = true
+		$SkeletonSprite/Arm4.z_index = 0
 
 func _ready():
 	build()
@@ -96,62 +106,84 @@ func _process(delta):
 	ingame_ui.set_health_bar((hp / max_hp) * 100.0)
 
 func _physics_process(delta):
-	# Climbing
-	if canClimb and Input.is_action_pressed("Grab"):
-		#if !isClimbing:
-			#velocity = Vector2.ZERO
-		isClimbing = true
+	# Check for freefall
+	if velocity.y > 3000:
+		in_freefall = true
+		if velocity.x > 0:
+			$SkeletonSprite.rotation += delta * 20
+		else:
+			$SkeletonSprite.rotation -= delta * 20
+		velocity.y += gravity * delta
+		time_since_grounded += delta
 	else:
-		isClimbing = false
+		in_freefall = false
+		$SkeletonSprite.rotation = 0
 	
-	if isClimbing:
-		gravity = 0
-		
-		var climbDir = Vector2(Input.get_axis("Left", "Right"), Input.get_axis("Jump", "Down")).normalized()
-		velocity = velocity.move_toward(maxSpeed / 2.0 * climbDir, acceleration * delta)
+	if in_freefall:
+		if !scream_played:
+			$scream.pitch_scale = randf_range(0.9, 1.1)
+			$scream.play()
+			scream_played = true
 	else:
-		gravity = 1600
+		scream_played = false
 		
-		# BEGIN REGULAR PLATFORM CODE
-		var direction = Input.get_axis("Left", "Right")
-		
-		# Gravity
-		if !is_on_floor():
-			#if Input.is_action_pressed("Jump") and velocity.y < 0:
-				#gravity = 1200
-			#else:
-				#gravity = 1600
-			velocity.y += gravity * delta
-			time_since_grounded += delta
+		# Climbing
+		if canClimb and Input.is_action_pressed("Grab"):
+			#if !isClimbing:
+				#velocity = Vector2.ZERO
+			isClimbing = true
 		else:
-			additional_jumps = num_jumps # resets to max jump value
-			time_since_grounded = 0
+			isClimbing = false
 		
-		
-		# Handle jump input allowing for jump buffering.
-		if Input.is_action_just_pressed("Jump"):
-			time_since_jump = 0
-		else:
-			time_since_jump += delta
-		
-		if time_since_jump < 0.25 and time_since_grounded < 0.15:
-			velocity.y = JUMP_VELOCITY
-		elif time_since_jump == 0 and additional_jumps > 0:
-			additional_jumps -= 1
-			velocity.y = JUMP_VELOCITY
+		if isClimbing:
+			gravity = 0
 			
-			# Jump cancel
-		if cancel_jump and velocity.y < 0 and !Input.is_action_pressed("Jump"): # Does not execute if falling; only activates if cancelling a jump
-			velocity.y = 0
+			var climbDir = Vector2(Input.get_axis("Left", "Right"), Input.get_axis("Jump", "Down")).normalized()
+			velocity = velocity.move_toward(maxSpeed / 2.0 * climbDir, acceleration * delta)
+		else:
+			gravity = 1600
+			
+			# BEGIN REGULAR PLATFORM CODE
+			var direction = Input.get_axis("Left", "Right")
+			
+			# Gravity
+			if !is_on_floor():
+				#if Input.is_action_pressed("Jump") and velocity.y < 0:
+					#gravity = 1200
+				#else:
+					#gravity = 1600
+				velocity.y += gravity * delta
+				time_since_grounded += delta
+			else:
+				additional_jumps = num_jumps # resets to max jump value
+				time_since_grounded = 0
+			
+			
+			# Handle jump input allowing for jump buffering.
+			if Input.is_action_just_pressed("Jump"):
+				time_since_jump = 0
+			else:
+				time_since_jump += delta
+			
+			if time_since_jump < 0.25 and time_since_grounded < 0.15:
+				velocity.y = JUMP_VELOCITY
+			elif time_since_jump == 0 and additional_jumps > 0:
+				additional_jumps -= 1
+				velocity.y = JUMP_VELOCITY
+				
+				# Jump cancel
+			if cancel_jump and velocity.y < 0 and !Input.is_action_pressed("Jump"): # Does not execute if falling; only activates if cancelling a jump
+				velocity.y = 0
+			
+			# Acceleration and deceleration
+			if is_on_floor():
+				velocity.x = move_toward(velocity.x, maxSpeed * direction, acceleration * delta)
+			elif can_move_in_air && direction: # the && direction exists so you don't decelerate when not holding keys
+				velocity.x = move_toward(velocity.x, maxSpeed * direction, acceleration / 2 * delta)
 		
-		# Acceleration and deceleration
-		if is_on_floor():
-			velocity.x = move_toward(velocity.x, maxSpeed * direction, acceleration * delta)
-		elif can_move_in_air && direction: # the && direction exists so you don't decelerate when not holding keys
-			velocity.x = move_toward(velocity.x, maxSpeed * direction, acceleration / 2 * delta)
-		
-		if prevVelocity.y > JUMP_VELOCITY * -2.5 and is_on_floor():
-			take_damage(pow(prevVelocity.y / (JUMP_VELOCITY * -1), 2))
+	# Fall Damage
+	if prevVelocity.y > JUMP_VELOCITY * -2.5 and is_on_floor():
+		take_damage(pow(prevVelocity.y / (JUMP_VELOCITY * -1), 2))
 	
 	flip_all_sprites()
 	prevVelocity = velocity

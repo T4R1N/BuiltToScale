@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://dehe6xtr1m768"
-path="res://.godot/imported/blipSelect.wav-633b3be6a0cf779ed5b670dbec5a3642.sample"
+uid="uid://bgutocea7r8lx"
+path="res://.godot/imported/scream.wav-048845e1657061d7989e8e053154179d.sample"
 
 [deps]
 
-source_file="res://Assets/blipSelect.wav"
-dest_files=["res://.godot/imported/blipSelect.wav-633b3be6a0cf779ed5b670dbec5a3642.sample"]
+source_file="res://Assets/Sounds/scream.wav"
+dest_files=["res://.godot/imported/scream.wav-048845e1657061d7989e8e053154179d.sample"]
 
 [params]
 

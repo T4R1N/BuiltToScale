@@ -409,11 +409,11 @@ sources/0 = SubResource("TileSetAtlasSource_a61kd")
 
 [node name="GrabPoint" parent="." instance=ExtResource("7_yle4h")]
 z_index = -1
-position = Vector2(1684, -484)
-scale = Vector2(-0.636063, 15.4429)
+position = Vector2(1664, -1728)
+scale = Vector2(-0.636063, 34.7229)
 
 [node name="Player" parent="." instance=ExtResource("1_yy72t")]
-position = Vector2(555, 177)
+position = Vector2(256, 320)
 skeleton = ExtResource("2_ge4ut")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -427,9 +427,15 @@ layer_0/tile_data = PackedInt32Array(524288, 0, 0, 524289, 524288, 0, 524290, 58
 [node name="IngameUI" parent="." instance=ExtResource("5_6xs6y")]
 
 [node name="Sawblade" parent="." instance=ExtResource("6_s7ot8")]
-position = Vector2(1332, 784)
+position = Vector2(1216, 576)
 
 [node name="Item" parent="." instance=ExtResource("8_w1c17")]
-position = Vector2(1873, -279)
+position = Vector2(1920, -256)
+
+[node name="Sawblade2" parent="." instance=ExtResource("6_s7ot8")]
+position = Vector2(1344, 576)
+
+[node name="Sawblade3" parent="." instance=ExtResource("6_s7ot8")]
+position = Vector2(1472, 576)
 
 [connection signal="climb" from="GrabPoint" to="Player" method="set_canClimb"]
