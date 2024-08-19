@@ -1,71 +1,45 @@
 [gd_scene load_steps=8 format=3 uid="uid://clnqneypla45e"]
 
-[ext_resource type="Texture2D" uid="uid://c4b7rxy0imfvs" path="res://Assets/Sawblade.png" id="1_0yrcn"]
 [ext_resource type="Script" path="res://Scripts/Sawblade.gd" id="1_t4u5n"]
+[ext_resource type="Texture2D" uid="uid://dmni8t1hsvp6j" path="res://Assets/Saw frame 1.png" id="2_npkip"]
+[ext_resource type="Texture2D" uid="uid://cls4vut2xdetu" path="res://Assets/Saw frame 2.png" id="3_j8i8b"]
+[ext_resource type="Texture2D" uid="uid://qgpah28fyojt" path="res://Assets/Saw frame 3.png" id="4_foyt3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0sdcq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_npkip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j8i8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_foyt3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n576s"]
-size = Vector2(294, 321)
+size = Vector2(64, 64)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnvi"]
-radius = 281.0
-
-[sub_resource type="Animation" id="Animation_xjbvq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_176l5"]
-resource_name = "rotate"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2xdqh"]
-_data = {
-"RESET": SubResource("Animation_xjbvq"),
-"rotate": SubResource("Animation_176l5")
-}
+radius = 64.0
 
 [node name="Sawblade" type="StaticBody2D"]
 script = ExtResource("1_t4u5n")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 16)
-texture = ExtResource("1_0yrcn")
+[node name="SawFrames" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_0sdcq")
+frame_progress = 0.71135
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-9, 4.5)
 shape = SubResource("RectangleShape2D_n576s")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-13, 9)
 shape = SubResource("CircleShape2D_cvnvi")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_2xdqh")
-}
-speed_scale = 3.0
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

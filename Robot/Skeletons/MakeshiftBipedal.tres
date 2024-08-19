@@ -11,5 +11,5 @@ augments = Array[Resource("res://Robot/Augments/RobotAugment.gd")]([null])
 designation = "Bipedal"
 mass = 5.0
 durability = 10.0
-texture = ExtResource("4_w8l64")
+texture = ExtResource("4_rkanv")
 type = "Makeshift"
