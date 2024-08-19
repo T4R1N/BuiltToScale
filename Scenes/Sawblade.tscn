@@ -34,7 +34,7 @@ script = ExtResource("1_t4u5n")
 [node name="SawFrames" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_0sdcq")
-frame_progress = 0.837114
+frame_progress = 0.71135
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_n576s")
