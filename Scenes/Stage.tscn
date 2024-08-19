@@ -406,6 +406,11 @@ sources/0 = SubResource("TileSetAtlasSource_a61kd")
 
 [node name="Stage" type="Node2D"]
 
+[node name="GrabPoint" parent="." instance=ExtResource("7_yle4h")]
+z_index = -1
+position = Vector2(1688, 175)
+scale = Vector2(1, 4.96)
+
 [node name="Player" parent="." instance=ExtResource("1_yy72t")]
 position = Vector2(555, 177)
 skeleton = ExtResource("2_ge4ut")
@@ -422,9 +427,5 @@ layer_0/tile_data = PackedInt32Array(524288, 0, 0, 524289, 524288, 0, 524290, 58
 
 [node name="Sawblade" parent="." instance=ExtResource("6_s7ot8")]
 position = Vector2(1332, 784)
-
-[node name="GrabPoint" parent="." instance=ExtResource("7_yle4h")]
-position = Vector2(1688, 175)
-scale = Vector2(1, 4.96)
 
 [connection signal="climb" from="GrabPoint" to="Player" method="set_canClimb"]

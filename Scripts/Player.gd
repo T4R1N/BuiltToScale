@@ -19,6 +19,7 @@ var cur_grap: float
 var hp: float
 
 var canClimb = false
+var isClimbing = false
 
 var can_move_in_air = true # For use with augments
 var can_walk_to_climb = false # Spiderbody
@@ -108,6 +109,18 @@ func _physics_process(delta):
 		additional_jumps = num_jumps # resets to max jump value
 		time_since_grounded = 0
 	
+	# Climbing
+	if canClimb and Input.is_action_pressed("Grab"):
+		if !isClimbing:
+			velocity = Vector2.ZERO
+		isClimbing = true
+	else:
+		isClimbing = false
+	
+	if isClimbing:
+		gravity = 0
+	else:
+		gravity = 1600
 	
 	# Handle jump input allowing for jump buffering.
 	if Input.is_action_just_pressed("Jump"):
