@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ca15o1d2nemi6"]
 
 [ext_resource type="Script" path="res://Scripts/IngameUI.gd" id="1_0clcf"]
-[ext_resource type="Theme" uid="uid://cwpm0manfxk76" path="res://Assets/tres/MainGUI.tres" id="1_k8x0y"]
+[ext_resource type="Theme" path="res://Assets/MainGUI.tres" id="1_k8x0y"]
 [ext_resource type="Script" path="res://Scripts/AugContainer.gd" id="3_od63x"]
 [ext_resource type="PackedScene" uid="uid://byf5eu43xikv7" path="res://Scenes/AugInfo.tscn" id="4_j0rbh"]
 
