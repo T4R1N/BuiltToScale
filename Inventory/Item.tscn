@@ -1,11 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgylcv4p02iem"]
+[gd_scene load_steps=6 format=3 uid="uid://dgylcv4p02iem"]
 
 [ext_resource type="Script" path="res://Inventory/Item.gd" id="1_cf0ys"]
-[ext_resource type="Resource" uid="uid://bk58yb7yvb4bk" path="res://Robot/Augments/DoubleJumper.tres" id="2_kjqp4"]
+[ext_resource type="Resource" uid="uid://b2oeymhf5384d" path="res://Robot/Limbs/Arms/MakeshiftArm.tres" id="2_7624y"]
+[ext_resource type="Texture2D" uid="uid://djxay0ro0cjaf" path="res://Robot/Limbs/Arms/MakeshiftArm.png" id="3_npu5h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oifbb"]
+size = Vector2(16.2857, 22.8571)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vakod"]
+size = Vector2(24, 32.2857)
 
 [node name="Item" type="CharacterBody2D"]
 scale = Vector2(3.5, 3.5)
 script = ExtResource("1_cf0ys")
-item = ExtResource("2_kjqp4")
+item = ExtResource("2_7624y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_npu5h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0.57143)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_oifbb")
+
+[node name="PickupZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupZone"]
+position = Vector2(0.857143, 0.142857)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_vakod")
