@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://xjci2p0oquym"]
+[gd_scene load_steps=8 format=3 uid="uid://xjci2p0oquym"]
 
 [ext_resource type="PackedScene" uid="uid://lbttidtwr61x" path="res://Scenes/Player.tscn" id="1_yy72t"]
 [ext_resource type="PackedScene" uid="uid://bn8d0e3jntyoi" path="res://Scenes/Platform.tscn" id="2_1j0w4"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ctf3x6h5lsns6" path="res://Scenes/Camera.tscn" id="3_3c7m6"]
 [ext_resource type="PackedScene" uid="uid://ca15o1d2nemi6" path="res://Scenes/IngameUI.tscn" id="5_6xs6y"]
 [ext_resource type="PackedScene" uid="uid://clnqneypla45e" path="res://Scenes/Sawblade.tscn" id="6_s7ot8"]
+[ext_resource type="PackedScene" uid="uid://cew6fedv6vq1x" path="res://Scenes/GrabPoint.tscn" id="7_yle4h"]
 
 [node name="Stage" type="Node2D"]
 
@@ -53,3 +54,7 @@ scale = Vector2(7.8137, 0.824236)
 
 [node name="Sawblade" parent="StaticObjects" instance=ExtResource("6_s7ot8")]
 position = Vector2(1332, 784)
+
+[node name="GrabPoint" parent="." instance=ExtResource("7_yle4h")]
+position = Vector2(1741, 173)
+scale = Vector2(1, 4.96)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://byf5eu43xikv7"]
 
 [ext_resource type="Script" path="res://Scenes/AugInfo.gd" id="1_7ymrm"]
-[ext_resource type="Theme" uid="uid://cwpm0manfxk76" path="res://Assets/MainGUI.tres" id="1_miy2a"]
+[ext_resource type="Theme" uid="uid://cwpm0manfxk76" path="res://Assets/tres/MainGUI.tres" id="1_miy2a"]
 
 [node name="AugInfo" type="Control"]
 custom_minimum_size = Vector2(0, 100)

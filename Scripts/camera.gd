@@ -15,8 +15,10 @@ func _physics_process(delta):
 	var dirTowards = global_position.direction_to(target.get_global_position() + camOffset)
 	var distTo = global_position.distance_to(target.get_global_position() + camOffset)
 	
-	velocity *= 0.8
+	velocity *= 0.8 #damp isnt based on delta because its annoying to do that
 	velocity += dirTowards * camSpeed * distTo * delta
-	
-	# basically move_and_slide() but not
-	global_position += velocity
+	if target.is_on_floor():
+		# basically move_and_slide() but not
+		global_position += velocity
+	else:
+		global_position = lerp(global_position, target.get_global_position() + camOffset, .2)
