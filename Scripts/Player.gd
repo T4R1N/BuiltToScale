@@ -11,6 +11,7 @@ var time_since_grounded = INF
 var JUMP_VELOCITY = -600.0
 
 var gravity = 1600
+var prevVelocity = Vector2.ZERO
 
 var acceleration = 3000.0
 var maxSpeed = 800.0
@@ -141,17 +142,26 @@ func _physics_process(delta):
 			
 			# Jump cancel
 		if cancel_jump and velocity.y < 0 and !Input.is_action_pressed("Jump"): # Does not execute if falling; only activates if cancelling a jump
-			velocity.y -= JUMP_VELOCITY * 4 * delta
+			velocity.y = 0
 		
 		# Acceleration and deceleration
 		if is_on_floor():
 			velocity.x = move_toward(velocity.x, maxSpeed * direction, acceleration * delta)
 		elif can_move_in_air && direction: # the && direction exists so you don't decelerate when not holding keys
 			velocity.x = move_toward(velocity.x, maxSpeed * direction, acceleration / 2 * delta)
-
+		
+		if prevVelocity.y > JUMP_VELOCITY * -2.5 and is_on_floor():
+			take_damage(pow(prevVelocity.y / (JUMP_VELOCITY * -1), 2))
+	
 	flip_all_sprites()
-
+	prevVelocity = velocity
 	move_and_slide()
+	
+	if hp <= 0:
+		DEAD = true
+	
+	if DEAD:
+		get_tree().reload_current_scene()
 
 func set_canClimb(val: bool):
 	canClimb = val

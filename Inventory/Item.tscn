@@ -12,6 +12,7 @@ size = Vector2(24, 32.2857)
 
 [node name="Item" type="CharacterBody2D"]
 scale = Vector2(3.5, 3.5)
+collision_layer = 2
 script = ExtResource("1_cf0ys")
 item = ExtResource("2_7624y")
 
