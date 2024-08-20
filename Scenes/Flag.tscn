@@ -49,7 +49,7 @@ shape = SubResource("RectangleShape2D_y8ld8")
 position = Vector2(0, 32)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_7qybv")
-frame_progress = 0.638019
+frame_progress = 0.824659
 
 [node name="win" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_v15ri")

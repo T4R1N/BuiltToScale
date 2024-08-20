@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://lbttidtwr61x"]
+[gd_scene load_steps=21 format=3 uid="uid://lbttidtwr61x"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_wyj45"]
 [ext_resource type="Texture2D" uid="uid://cot2j37n8dlle" path="res://Robot/Skeletons/ArcadeSkeleton.png" id="2_c61r2"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://cw7wur18nx3ex" path="res://Assets/Sounds/explosion1.wav" id="8_y7twx"]
 [ext_resource type="AudioStream" uid="uid://c1d2q43qvrkxf" path="res://Assets/Sounds/explosion2.wav" id="9_t248i"]
 [ext_resource type="AudioStream" uid="uid://cbo7y86xtdt3w" path="res://Assets/Sounds/jump.wav" id="10_l3prd"]
+[ext_resource type="AudioStream" uid="uid://bipsc6012te1" path="res://Assets/Sounds/footstep.wav" id="11_dvmq7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5wt18"]
 radius = 29.0
@@ -384,25 +385,25 @@ scale = Vector2(4, 4)
 texture = ExtResource("2_c61r2")
 
 [node name="Arm1" type="Sprite2D" parent="SkeletonSprite"]
-position = Vector2(-8.80858, 11.6529)
-rotation = -0.112413
+position = Vector2(-4.75, -7.5)
+rotation = -2.86083
 texture = ExtResource("3_jx6rc")
 
 [node name="Arm2" type="Sprite2D" parent="SkeletonSprite"]
 z_index = -1
-position = Vector2(10.3886, 12.3543)
-rotation = -0.385721
+position = Vector2(11.25, -7.5)
+rotation = -2.92658
 texture = ExtResource("3_jx6rc")
 
 [node name="Arm3" type="Sprite2D" parent="SkeletonSprite"]
-position = Vector2(-6.57573, 22.5143)
-rotation = 0.864915
+position = Vector2(-6.25, 24.75)
+rotation = 0.085569
 texture = ExtResource("4_430jv")
 
 [node name="Arm4" type="Sprite2D" parent="SkeletonSprite"]
 z_index = -1
-position = Vector2(-0.917133, 25.9757)
-rotation = 0.720227
+position = Vector2(7.5, 23.25)
+rotation = -0.06451
 texture = ExtResource("4_430jv")
 
 [node name="scream" type="AudioStreamPlayer" parent="."]
@@ -417,6 +418,7 @@ bus = &"SFX"
 
 [node name="jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_l3prd")
+bus = &"SFX"
 
 [node name="fallAnim" type="AnimationPlayer" parent="."]
 libraries = {
@@ -427,3 +429,13 @@ libraries = {
 libraries = {
 "": SubResource("AnimationLibrary_cga6k")
 }
+
+[node name="WalkTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="walk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_dvmq7")
+volume_db = -9.275
+bus = &"SFX"
+
+[connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]

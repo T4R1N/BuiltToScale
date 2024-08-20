@@ -33,6 +33,10 @@ var DEAD = false
 var mass: float
 var max_hp: float
 
+#QUICK!!!
+var walkmod: float
+var prevWalk: float
+
 @onready var ingame_ui = $"../IngameUI"
 @onready var inv_database = get_node("/root/Main/InventoryDatabase")
 
@@ -194,6 +198,11 @@ func _physics_process(delta):
 		if abs(velocity.x) > 1:
 			$Animations.play("run_animation")
 			$Animations.speed_scale = abs(velocity.x) / 500
+			prevWalk = walkmod
+			walkmod = fmod($Animations.current_animation_position, 0.5)
+			if prevWalk > walkmod:
+				$walk.pitch_scale = randf_range(0.5, 0.8)
+				$walk.play()
 		else:
 			$Animations.play("idle")
 			$Animations.speed_scale = 0.5
@@ -212,3 +221,7 @@ func _physics_process(delta):
 	
 	if DEAD:
 		$"/root/Main".death()
+
+
+func _on_walk_timer_timeout():
+	$walk.play()
