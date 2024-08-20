@@ -34,7 +34,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_6oky3"]
@@ -102,5 +102,4 @@ bus = &"Music"
 
 [node name="Death" type="AudioStreamPlayer" parent="."]
 
-[connection signal="begin" from="CurrentScene/Menu" to="." method="_on_menu_begin"]
 [connection signal="transitioned" from="TransitionScreen" to="." method="_on_transition_screen_transitioned"]

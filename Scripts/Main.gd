@@ -37,3 +37,6 @@ func _on_transition_screen_transitioned():
 
 func win():
 	go_to_scene("Home")
+	$AudioAnimator.play("RESET")
+	$Wind.stop()
+	$Jukebox.play()
