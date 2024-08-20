@@ -4,7 +4,7 @@ class_name Player
 
 @export var skeleton: RobotSkeleton
 
-var num_jumps = 1
+var num_jumps = 0
 var additional_jumps = num_jumps
 var time_since_jump = INF
 var time_since_grounded = INF
@@ -101,6 +101,8 @@ func flip_all_sprites():
 
 func _ready():
 	build()
+	$Animations.play("idle")
+	$Animations.speed_scale = 0.5
 
 func take_damage(dmg: float):
 	hp -= dmg
@@ -192,15 +194,22 @@ func _physics_process(delta):
 	
 	# Animations and visuals
 	flip_all_sprites()
-	if abs(velocity.x) > 1:
-		$Animations.play("run_animation")
-		$Animations.speed_scale = abs(velocity.x) / 500
+	if is_on_floor():
+		if abs(velocity.x) > 1:
+			$Animations.play("run_animation")
+			$Animations.speed_scale = abs(velocity.x) / 500
+		else:
+			$Animations.play("idle")
+			$Animations.speed_scale = 0.5
+	else:
+		$Animations.play("fall")
+		$Animations.speed_scale = abs(velocity.y / 1000)
 	
 	
 	prevVelocity = velocity
 	move_and_slide()
 	
-	if hp <= 0:
+	if hp <= 0 or global_position.y > 10000:
 		DEAD = true
 	
 	if DEAD:
