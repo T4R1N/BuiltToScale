@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ujrl0r23bgjd"]
+[gd_scene load_steps=13 format=3 uid="uid://ujrl0r23bgjd"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_6liqm"]
 [ext_resource type="PackedScene" uid="uid://xjci2p0oquym" path="res://Scenes/Stage.tscn" id="2_paj0h"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://fxmea856d6lt" path="res://Scenes/TransitionScreen.tscn" id="4_k3c3p"]
 [ext_resource type="AudioStream" uid="uid://dehob6agso060" path="res://Assets/Sounds/t4-DesignedToClimb.ogg" id="5_hxank"]
 [ext_resource type="PackedScene" uid="uid://bmooe1628vo1y" path="res://Inventory/InventoryDatabase.tscn" id="6_kel8g"]
+[ext_resource type="AudioStream" uid="uid://dj35ajhfgu4ya" path="res://Assets/Sounds/smooth-cold-wind-looped-135538.mp3" id="7_jfqxr"]
+[ext_resource type="AudioStream" uid="uid://dcd5y2bnrvo02" path="res://Assets/Sounds/t4-GombousCity.ogg" id="7_qm7o6"]
 
 [sub_resource type="Animation" id="Animation_i2uau"]
 length = 0.001
@@ -72,6 +74,7 @@ _data = {
 script = ExtResource("1_6liqm")
 stage = ExtResource("2_paj0h")
 build_stage = ExtResource("3_15jqi")
+menu = ExtResource("3_xmxm3")
 
 [node name="CurrentScene" type="Node" parent="."]
 
@@ -87,8 +90,17 @@ libraries = {
 [node name="Jukebox" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_hxank")
 
+[node name="Wind" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_jfqxr")
+bus = &"Music"
+
+[node name="GameplayMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_qm7o6")
+bus = &"Music"
+
 [node name="InventoryDatabase" parent="." instance=ExtResource("6_kel8g")]
-inv = Array[Resource("res://Robot/AbstractRobotPiece.gd")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
 
 [connection signal="begin" from="CurrentScene/Menu" to="." method="_on_menu_begin"]
 [connection signal="transitioned" from="TransitionScreen" to="." method="_on_transition_screen_transitioned"]

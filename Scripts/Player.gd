@@ -33,8 +33,11 @@ var DEAD = false
 @onready var mass = skeleton.mass
 @onready var max_hp = skeleton.durability
 @onready var ingame_ui = $"../IngameUI"
+@onready var inv_database = get_node("/root/Main/InventoryDatabase")
 
 func build():
+	skeleton = inv_database.cur_skelly
+	
 	for i in skeleton.arms:
 		mass += i.mass
 		max_hp += i.durability
@@ -123,7 +126,7 @@ func _physics_process(delta):
 	
 	if in_freefall:
 		if !scream_played:
-			$scream.pitch_scale = randf_range(0.9, 1.1)
+			$scream.pitch_scale = randf_range(0.84, 1.16)
 			$scream.play()
 			scream_played = true
 	else:

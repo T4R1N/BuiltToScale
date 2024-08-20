@@ -125,26 +125,22 @@ texture = ExtResource("2_p51s8")
 
 [node name="Arm1" type="Sprite2D" parent="SkeletonSprite"]
 position = Vector2(-13.5, 7)
-scale = Vector2(1, 1)
 texture = ExtResource("3_jx6rc")
 
 [node name="Arm2" type="Sprite2D" parent="SkeletonSprite"]
 z_index = -1
 position = Vector2(11.5, 8)
-scale = Vector2(1, 1)
 texture = ExtResource("3_jx6rc")
 
 [node name="Arm3" type="Sprite2D" parent="SkeletonSprite"]
 position = Vector2(0.822309, 35.8442)
 rotation = -0.138494
-scale = Vector2(1, 1)
 texture = ExtResource("4_430jv")
 
 [node name="Arm4" type="Sprite2D" parent="SkeletonSprite"]
 z_index = -1
 position = Vector2(-6.8876, 27.8587)
 rotation = 1.35191
-scale = Vector2(1, 1)
 texture = ExtResource("4_430jv")
 
 [node name="scream" type="AudioStreamPlayer" parent="."]

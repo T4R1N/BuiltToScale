@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3y5mqbx51k1g"]
+[gd_scene load_steps=9 format=3 uid="uid://c3y5mqbx51k1g"]
 
 [ext_resource type="Script" path="res://Scenes/BuildStage.gd" id="1_4xvtj"]
 [ext_resource type="Theme" path="res://Assets/tres/MainGUI.tres" id="1_h66it"]
-[ext_resource type="Texture2D" uid="uid://cnitut7r478vi" path="res://Assets/IMG_0105.png" id="1_my3tj"]
 [ext_resource type="PackedScene" uid="uid://c0axy8g71slr8" path="res://Inventory/InvSlot.tscn" id="1_pcml4"]
 [ext_resource type="Texture2D" uid="uid://djxay0ro0cjaf" path="res://Robot/Limbs/Arms/MakeshiftArm.png" id="2_13vnn"]
 [ext_resource type="Texture2D" uid="uid://c8opdlu26ssbc" path="res://Robot/Limbs/Legs/MakeshiftLeg.png" id="3_t3v0e"]
+[ext_resource type="Texture2D" uid="uid://det64rt03jw4j" path="res://Assets/MakeshiftSkeleton.png" id="4_fd786"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c2k32"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dur4d"]
 
 [node name="BuildStage" type="Node2D"]
 script = ExtResource("1_4xvtj")
@@ -119,6 +123,47 @@ layout_mode = 2
 [node name="InvSlot3" parent="CanvasLayer/Control/InfiniteInventory" instance=ExtResource("1_pcml4")]
 layout_mode = 2
 
+[node name="SkeletonInventory" type="GridContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 39.0
+offset_top = -418.0
+offset_right = 135.0
+offset_bottom = 423.0
+grow_vertical = 2
+
+[node name="Skeleton" parent="CanvasLayer/Control/SkeletonInventory" instance=ExtResource("1_pcml4")]
+layout_mode = 2
+
+[node name="_Divider1" type="Panel" parent="CanvasLayer/Control/SkeletonInventory"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_c2k32")
+
+[node name="LeftArm" parent="CanvasLayer/Control/SkeletonInventory" instance=ExtResource("1_pcml4")]
+layout_mode = 2
+
+[node name="RightArm" parent="CanvasLayer/Control/SkeletonInventory" instance=ExtResource("1_pcml4")]
+layout_mode = 2
+
+[node name="_Divider2" type="Panel" parent="CanvasLayer/Control/SkeletonInventory"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dur4d")
+
+[node name="LeftLeg" parent="CanvasLayer/Control/SkeletonInventory" instance=ExtResource("1_pcml4")]
+layout_mode = 2
+
+[node name="RightLeg" parent="CanvasLayer/Control/SkeletonInventory" instance=ExtResource("1_pcml4")]
+layout_mode = 2
+
+[node name="_Divider3" type="Panel" parent="CanvasLayer/Control/SkeletonInventory"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dur4d")
+
 [node name="Button" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = 3
@@ -137,9 +182,9 @@ theme_override_font_sizes/font_size = 64
 text = "Build 'n' Scale!"
 
 [node name="Skeleton" type="Sprite2D" parent="."]
-position = Vector2(473, 419)
-scale = Vector2(0.579724, 0.579724)
-texture = ExtResource("1_my3tj")
+position = Vector2(436, 365)
+scale = Vector2(8.318, 8.318)
+texture = ExtResource("4_fd786")
 
 [node name="LeftArm" type="Sprite2D" parent="."]
 position = Vector2(209, 477)
@@ -160,3 +205,5 @@ texture = ExtResource("3_t3v0e")
 position = Vector2(564, 748)
 scale = Vector2(8.31818, 8.31818)
 texture = ExtResource("3_t3v0e")
+
+[connection signal="pressed" from="CanvasLayer/Control/Button" to="." method="_on_button_pressed"]

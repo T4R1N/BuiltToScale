@@ -3,7 +3,7 @@ extends Node
 @export var inf_inventory: Array[AbstractRobotPiece]
 @export var inventory: Array[AbstractRobotPiece]
 
-
+var cur_skelly: RobotSkeleton
 
 func pickup(piece: AbstractRobotPiece):
 	for slot in inventory:
@@ -12,11 +12,6 @@ func pickup(piece: AbstractRobotPiece):
 			print(slot)
 			break
 
-func load_slots():
-	pass
 
-func insert_player():
-	pass
-
-
-	return true
+func hold_skeleton(skelly: RobotSkeleton):
+	cur_skelly = skelly
