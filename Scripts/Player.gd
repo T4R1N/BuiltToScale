@@ -128,6 +128,7 @@ func _physics_process(delta):
 		if isClimbing:
 			gravity = 0
 			var climbDir = Vector2(Input.get_axis("Left", "Right"), Input.get_axis("Jump", "Down")).normalized()
+			cur_grap -= delta * 50
 			if climbDir:
 				cur_grap -= delta * 100
 				cur_grap = clamp(cur_grap, 0, grapple_strength)
