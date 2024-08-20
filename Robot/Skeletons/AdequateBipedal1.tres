@@ -12,4 +12,4 @@ designation = "Bipedal"
 mass = 3.0
 durability = 6.0
 texture = ExtResource("2_krn2v")
-type = "Adequate"
+type = "Default"

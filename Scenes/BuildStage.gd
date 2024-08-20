@@ -35,17 +35,17 @@ func append_piece(piece: AbstractRobotPiece, right: bool) -> void:
 		RobotArm:
 			if right:
 				cur_skelly.arms[1] = piece
-				$RightArm.texture = piece.texture
+				$CanvasLayer/RightArm.texture = piece.texture
 			else:
 				cur_skelly.arms[0] = piece
-				$LeftArm.texture = piece.texture
+				$CanvasLayer/LeftArm.texture = piece.texture
 		RobotLeg:
 			if right:
 				cur_skelly.legs[1] = piece
-				$RightLeg.texture = piece.texture
+				$CanvasLayer/RightLeg.texture = piece.texture
 			else:
 				cur_skelly.legs[0] = piece
-				$LeftLeg.texture = piece.texture
+				$CanvasLayer/LeftLeg.texture = piece.texture
 		RobotAugment:
 			pass
 
@@ -119,27 +119,27 @@ func load_slots(): # I'm very sorry about my awful, unreadable code.
 			
 
 func load_sprites():
-	$Skeleton.texture = cur_skelly.texture
+	$CanvasLayer/Skeleton.texture = cur_skelly.texture
 	
 	if cur_skelly.arms[0] == null:
-		$LeftArm.texture = null
+		$CanvasLayer/LeftArm.texture = null
 	else:
-		$LeftArm.texture = cur_skelly.arms[0].texture
+		$CanvasLayer/LeftArm.texture = cur_skelly.arms[0].texture
 		
 	if cur_skelly.arms[1] == null:
-		$RightArm.texture = null
+		$CanvasLayer/RightArm.texture = null
 	else:
-		$RightArm.texture = cur_skelly.arms[1].texture
+		$CanvasLayer/RightArm.texture = cur_skelly.arms[1].texture
 		
 	if cur_skelly.legs[0] == null:
-		$LeftLeg.texture = null
+		$CanvasLayer/LeftLeg.texture = null
 	else:
-		$LeftLeg.texture = cur_skelly.legs[0].texture
+		$CanvasLayer/LeftLeg.texture = cur_skelly.legs[0].texture
 		
 	if cur_skelly.legs[1] == null:
-		$RightLeg.texture = null
+		$CanvasLayer/RightLeg.texture = null
 	else:
-		$RightLeg.texture = cur_skelly.legs[1].texture
+		$CanvasLayer/RightLeg.texture = cur_skelly.legs[1].texture
 		
 
 func set_skel_val(holding: AbstractRobotPiece, right: bool, which_inv_type: String, which_slot: InvSlot): # Called upon pressing a slot

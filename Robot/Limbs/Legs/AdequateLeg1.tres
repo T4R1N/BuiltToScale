@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RobotLeg" load_steps=3 format=3 uid="uid://pa54etud771p"]
+
+[ext_resource type="Script" path="res://Robot/Limbs/Legs/RobotLeg.gd" id="1_pcjto"]
+[ext_resource type="Texture2D" uid="uid://c7xo7d0a84yfl" path="res://Robot/Limbs/Legs/AdequateLeg.png" id="2_trd36"]
+
+[resource]
+script = ExtResource("1_pcjto")
+speed_boost = 100.0
+accel_boost = 200.0
+jump_boost = 200.0
+mass = 2.0
+durability = 3.0
+texture = ExtResource("2_trd36")
+type = "Adequate"

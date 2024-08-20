@@ -11,4 +11,4 @@ jump_boost = 0.0
 mass = 2.0
 durability = 5.0
 texture = ExtResource("2_rahak")
-type = "Makeshift"
+type = "Default"

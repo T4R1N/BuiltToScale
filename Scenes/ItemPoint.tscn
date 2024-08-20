@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://lhdtaf8gfsvi"]
+
+[ext_resource type="Texture2D" uid="uid://ccp0hvhhwcqnc" path="res://Assets/BackgroundMountain.png" id="1_dpy5s"]
+[ext_resource type="Script" path="res://Scenes/ItemPoint.gd" id="1_wrhwb"]
+
+[node name="ItemPoint" type="Node2D"]
+script = ExtResource("1_wrhwb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dpy5s")
