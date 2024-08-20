@@ -168,6 +168,8 @@ func _physics_process(delta):
 			
 			if time_since_jump < 0.25 and time_since_grounded < 0.15:
 				velocity.y = JUMP_VELOCITY
+				$jump.pitch_scale = 1
+				$jump.play()
 			elif time_since_jump == 0 and additional_jumps > 0:
 				additional_jumps -= 1
 				velocity.y = JUMP_VELOCITY

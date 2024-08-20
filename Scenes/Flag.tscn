@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://brj3pr1isb7ot"]
+
+[ext_resource type="Script" path="res://Scripts/Flag.gd" id="1_cwspv"]
+[ext_resource type="Texture2D" uid="uid://dtxeubfo2pi48" path="res://Assets/Flag1.png" id="3_ib73s"]
+[ext_resource type="AudioStream" uid="uid://pbevw6akl7rb" path="res://Assets/Sounds/win.mp3" id="3_v15ri"]
+[ext_resource type="Texture2D" uid="uid://p0n4e7wbfh4t" path="res://Assets/Flag2.png" id="4_35iej"]
+[ext_resource type="Texture2D" uid="uid://cnom5minr6tuv" path="res://Assets/Flag3.png" id="5_ou1bf"]
+[ext_resource type="Texture2D" uid="uid://gphf8dr5wlsf" path="res://Assets/Flag4.png" id="6_0v8j8"]
+[ext_resource type="Texture2D" uid="uid://l40bd5wvflxx" path="res://Assets/Flag5.png" id="7_qf05w"]
+[ext_resource type="Texture2D" uid="uid://b8xr1rb0kaqrb" path="res://Assets/Flag6.png" id="8_qs5ty"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8ld8"]
+size = Vector2(64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7qybv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ib73s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_35iej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ou1bf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0v8j8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qf05w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qs5ty")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Flag" type="Area2D"]
+script = ExtResource("1_cwspv")
+
+[node name="FlagShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 32)
+shape = SubResource("RectangleShape2D_y8ld8")
+
+[node name="FlagSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 32)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_7qybv")
+frame_progress = 0.638019
+
+[node name="win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_v15ri")
+bus = &"SFX"
+
+[node name="wait" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="wait" to="." method="_on_wait_timeout"]

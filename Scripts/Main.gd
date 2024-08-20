@@ -34,3 +34,6 @@ func _on_transition_screen_transitioned():
 	var to_stage = cur_scene.instantiate()
 	$CurrentScene.get_child(0).queue_free()
 	$CurrentScene.add_child(to_stage)
+
+func win():
+	go_to_scene("Home")

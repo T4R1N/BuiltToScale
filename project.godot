@@ -13,6 +13,7 @@ config_version=5
 config/name="Designed To Climb"
 run/main_scene="res://Scenes/Main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/bg_color=Color(0.180392, 0.203922, 0.25098, 1)
 boot_splash/image="res://splash.PNG"
 config/icon="res://icon.PNG"
 

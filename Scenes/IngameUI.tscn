@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ca15o1d2nemi6"]
+[gd_scene load_steps=7 format=3 uid="uid://ca15o1d2nemi6"]
 
 [ext_resource type="Script" path="res://Scripts/IngameUI.gd" id="1_0clcf"]
 [ext_resource type="Theme" uid="uid://cwpm0manfxk76" path="res://Assets/tres/MainGUI.tres" id="1_k8x0y"]
 [ext_resource type="Script" path="res://Scripts/AugContainer.gd" id="3_od63x"]
 [ext_resource type="PackedScene" uid="uid://byf5eu43xikv7" path="res://Scenes/AugInfo.tscn" id="4_j0rbh"]
 [ext_resource type="Script" path="res://Scripts/GrappleStrength.gd" id="5_qxkdj"]
+[ext_resource type="FontFile" uid="uid://lxyrsd6j6jhj" path="res://Assets/SyneMono-Regular.ttf" id="6_g5sjb"]
 
 [node name="IngameUI" type="CanvasLayer"]
 script = ExtResource("1_0clcf")
@@ -112,3 +113,20 @@ theme = ExtResource("1_k8x0y")
 max_value = 1.0
 step = 0.001
 show_percentage = false
+
+[node name="WinLabel" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_g5sjb")
+theme_override_font_sizes/font_size = 150
+text = "You climbed Mt. Gliby"

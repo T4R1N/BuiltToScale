@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://lbttidtwr61x"]
+[gd_scene load_steps=20 format=3 uid="uid://lbttidtwr61x"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_wyj45"]
 [ext_resource type="Texture2D" uid="uid://cot2j37n8dlle" path="res://Robot/Skeletons/ArcadeSkeleton.png" id="2_c61r2"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://h4yk8h2ewcp3" path="res://Assets/Sounds/synth1.wav" id="7_hm721"]
 [ext_resource type="AudioStream" uid="uid://cw7wur18nx3ex" path="res://Assets/Sounds/explosion1.wav" id="8_y7twx"]
 [ext_resource type="AudioStream" uid="uid://c1d2q43qvrkxf" path="res://Assets/Sounds/explosion2.wav" id="9_t248i"]
+[ext_resource type="AudioStream" uid="uid://cbo7y86xtdt3w" path="res://Assets/Sounds/jump.wav" id="10_l3prd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5wt18"]
 radius = 29.0
@@ -413,6 +414,9 @@ stream = SubResource("AudioStreamRandomizer_6326q")
 volume_db = -5.0
 max_polyphony = 4
 bus = &"SFX"
+
+[node name="jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_l3prd")
 
 [node name="fallAnim" type="AnimationPlayer" parent="."]
 libraries = {
