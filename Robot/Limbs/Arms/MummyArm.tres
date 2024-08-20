@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="RobotArm" load_steps=3 format=3 uid="uid://kab67fn0b884"]
+
+[ext_resource type="Script" path="res://Robot/Limbs/Arms/RobotArm.gd" id="1_8npb2"]
+[ext_resource type="Texture2D" uid="uid://c7yhie58h7wx1" path="res://Robot/Limbs/Arms/MummyArm.png" id="2_rmnq5"]
+
+[resource]
+script = ExtResource("1_8npb2")
+grapple_strength = 200.0
+mass = 2.0
+durability = 4.0
+texture = ExtResource("2_rmnq5")
+type = "Makeshift"

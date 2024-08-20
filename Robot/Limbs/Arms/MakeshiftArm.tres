@@ -9,4 +9,4 @@ grapple_strength = 100.0
 mass = 2.0
 durability = 3.0
 texture = ExtResource("2_h56g1")
-type = ""
+type = "Makeshift"

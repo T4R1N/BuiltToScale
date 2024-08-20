@@ -8,11 +8,12 @@ var cur_skelly: RobotSkeleton
 @export var skeletons: Array[RobotSkeleton]
 
 func pickup(piece: AbstractRobotPiece):
-	for i in range(inventory.inv_data.size()):
-		if inventory.inv_data[i] == null:
-			inventory.inv_data[i] = piece
-			print(inventory.inv_data[i])
-			break
+	if piece.type != "Makeshift" && not piece is RobotSkeleton:
+		for i in range(inventory.inv_data.size()):
+			if inventory.inv_data[i] == null:
+				inventory.inv_data[i] = piece
+				print(inventory.inv_data[i])
+				break
 
 func remove_piece(piece: AbstractRobotPiece, place_id: int):
 	inventory.inv_data[place_id] = null

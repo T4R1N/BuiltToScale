@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="RobotSkeleton" load_steps=3 format=3 uid="uid://bdycers6yatmx"]
+
+[ext_resource type="Script" path="res://Robot/Skeletons/RobotSkeleton.gd" id="1_3jkm8"]
+[ext_resource type="Texture2D" uid="uid://chcnefi8c6p2l" path="res://Robot/Skeletons/ForborrrrrrSkeleton.png" id="2_oa5pv"]
+
+[resource]
+script = ExtResource("1_3jkm8")
+arms = Array[Resource("res://Robot/Limbs/Arms/RobotArm.gd")]([null, null])
+legs = Array[Resource("res://Robot/Limbs/Legs/RobotLeg.gd")]([null, null])
+augments = Array[Resource("res://Robot/Augments/RobotAugment.gd")]([null, null, null])
+designation = "Bipedal"
+mass = 5.0
+durability = 12.0
+texture = ExtResource("2_oa5pv")
+type = "Super"
