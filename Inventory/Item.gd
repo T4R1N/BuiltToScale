@@ -9,8 +9,11 @@ func pickup():
 	inventory.pickup(item)
 	queue_free()
 
-func _ready():
+func set_sprite():
 	$Sprite2D.texture = item.texture
+
+func _ready():
+	set_sprite()
 
 func _physics_process(delta):
 	if !is_on_floor():

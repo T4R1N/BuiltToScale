@@ -45,6 +45,8 @@ func build():
 	
 	mass = skeleton.mass
 	max_hp = skeleton.durability
+	num_jumps += skeleton.extra_jumps
+	additional_jumps = num_jumps
 	
 	print(str(skeleton.type) + str(skeleton.arms) + str(skeleton.legs))
 	for i in skeleton.arms:
@@ -142,7 +144,7 @@ func _physics_process(delta):
 			if climbDir:
 				cur_grap -= delta * 100
 				cur_grap = clamp(cur_grap, 0, grapple_strength)
-			velocity = velocity.move_toward(maxSpeed / 2.0 * climbDir, acceleration * delta)
+			velocity = velocity.move_toward((maxSpeed * 0.3 * climbDir) + grapple_strength * 0.3 * climbDir, acceleration * delta)
 		elif !DEAD:
 			gravity = 1600
 			

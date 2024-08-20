@@ -5,10 +5,10 @@
 
 [resource]
 script = ExtResource("1_djs3t")
-speed_boost = 0.0
-accel_boost = 0.0
-jump_boost = 0.0
+speed_boost = 100.0
+accel_boost = 100.0
+jump_boost = 100.0
 mass = 2.0
 durability = 3.0
 texture = ExtResource("2_pknee")
-type = ""
+type = "Makeshift"

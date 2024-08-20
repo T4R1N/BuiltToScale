@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_8npb2")
-grapple_strength = 200.0
+grapple_strength = 100.0
 mass = 2.0
-durability = 4.0
+durability = 2.0
 texture = ExtResource("2_rmnq5")
-type = "Makeshift"
+type = "Default"
