@@ -10,7 +10,7 @@ func _ready():
 	global_position = target.get_global_position()
 	var width_ratio = DisplayServer.window_get_size().x / 2560.0
 	zoom = Vector2(width_ratio, width_ratio)
-	
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,3 +25,5 @@ func _physics_process(delta):
 		global_position += velocity
 	else:
 		global_position = lerp(global_position, target.get_global_position() + camOffset, .2)
+	
+	#global_position = Vector2i(global_position)

@@ -1,14 +1,29 @@
-[gd_scene load_steps=14 format=3 uid="uid://lbttidtwr61x"]
+[gd_scene load_steps=19 format=3 uid="uid://lbttidtwr61x"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_wyj45"]
 [ext_resource type="Texture2D" uid="uid://det64rt03jw4j" path="res://Assets/MakeshiftSkeleton.png" id="2_p51s8"]
 [ext_resource type="Texture2D" uid="uid://djxay0ro0cjaf" path="res://Robot/Limbs/Arms/MakeshiftArm.png" id="3_jx6rc"]
 [ext_resource type="Texture2D" uid="uid://c8opdlu26ssbc" path="res://Robot/Limbs/Legs/MakeshiftLeg.png" id="4_430jv"]
 [ext_resource type="AudioStream" uid="uid://bgutocea7r8lx" path="res://Assets/Sounds/scream.wav" id="5_iqjjb"]
+[ext_resource type="AudioStream" uid="uid://rifpaw4ud1w0" path="res://Assets/Sounds/hurt2.wav" id="6_s28jp"]
+[ext_resource type="AudioStream" uid="uid://h4yk8h2ewcp3" path="res://Assets/Sounds/synth1.wav" id="7_hm721"]
+[ext_resource type="AudioStream" uid="uid://cw7wur18nx3ex" path="res://Assets/Sounds/explosion1.wav" id="8_y7twx"]
+[ext_resource type="AudioStream" uid="uid://c1d2q43qvrkxf" path="res://Assets/Sounds/explosion2.wav" id="9_t248i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5wt18"]
 radius = 41.0
 height = 290.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6326q"]
+streams_count = 4
+stream_0/stream = ExtResource("6_s28jp")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("7_hm721")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("8_y7twx")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("9_t248i")
+stream_3/weight = 1.0
 
 [sub_resource type="Animation" id="Animation_4vkea"]
 tracks/0/type = "value"
@@ -391,6 +406,13 @@ texture = ExtResource("4_430jv")
 
 [node name="scream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_iqjjb")
+bus = &"SFX"
+
+[node name="hurt" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_6326q")
+volume_db = -1.68
+max_polyphony = 4
+bus = &"SFX"
 
 [node name="fallAnim" type="AnimationPlayer" parent="."]
 libraries = {

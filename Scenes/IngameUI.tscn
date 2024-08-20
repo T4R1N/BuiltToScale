@@ -97,6 +97,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme = ExtResource("1_k8x0y")
+max_value = 1.0
 fill_mode = 1
 show_percentage = false
 
@@ -105,4 +106,5 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme = ExtResource("1_k8x0y")
+max_value = 1.0
 show_percentage = false
