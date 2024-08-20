@@ -62,6 +62,7 @@ func build():
 				cancel_jump = true
 	
 	hp = max_hp
+	cur_grap = grapple_strength
 	
 	ingame_ui.set_gui_label("Durability", max_hp)
 	ingame_ui.set_gui_label("Mass", mass)
@@ -79,24 +80,8 @@ func build():
 func flip_all_sprites():
 	if velocity.x > 0:
 		$SkeletonSprite.scale.x = 4
-		#$SkeletonSprite/Arm1.flip_h = false
-		#$SkeletonSprite/Arm1.z_index = 0
-		#$SkeletonSprite/Arm2.flip_h = false
-		#$SkeletonSprite/Arm2.z_index = -1
-		#$SkeletonSprite/Arm3.flip_h = false
-		#$SkeletonSprite/Arm3.z_index = 0
-		#$SkeletonSprite/Arm4.flip_h = false
-		#$SkeletonSprite/Arm4.z_index = -1
 	elif velocity.x < 0:
 		$SkeletonSprite.scale.x = -4
-		#$SkeletonSprite/Arm1.flip_h = true
-		#$SkeletonSprite/Arm1.z_index = -1
-		#$SkeletonSprite/Arm2.flip_h = true
-		#$SkeletonSprite/Arm2.z_index = 0
-		#$SkeletonSprite/Arm3.flip_h = true
-		#$SkeletonSprite/Arm3.z_index = -1
-		#$SkeletonSprite/Arm4.flip_h = true
-		#$SkeletonSprite/Arm4.z_index = 0
 
 func _ready():
 	build()
@@ -104,6 +89,7 @@ func _ready():
 	$Animations.speed_scale = 0.5
 
 func take_damage(dmg: float):
+	$hurt.play()
 	hp -= dmg
 
 func _process(delta):
@@ -134,17 +120,17 @@ func _physics_process(delta):
 		scream_played = false
 		
 		# Climbing
-		if canClimb and Input.is_action_pressed("Grab"):
-			#if !isClimbing:
-				#velocity = Vector2.ZERO
+		if canClimb and Input.is_action_pressed("Grab") and cur_grap > 0:
 			isClimbing = true
 		else:
 			isClimbing = false
 		
 		if isClimbing:
 			gravity = 0
-			
 			var climbDir = Vector2(Input.get_axis("Left", "Right"), Input.get_axis("Jump", "Down")).normalized()
+			if climbDir:
+				cur_grap -= delta * 100
+				cur_grap = clamp(cur_grap, 0, grapple_strength)
 			velocity = velocity.move_toward(maxSpeed / 2.0 * climbDir, acceleration * delta)
 		else:
 			gravity = 1600
@@ -161,6 +147,8 @@ func _physics_process(delta):
 				velocity.y += gravity * delta
 				time_since_grounded += delta
 			else:
+				cur_grap += delta * 200
+				cur_grap = clamp(cur_grap, 0, grapple_strength)
 				additional_jumps = num_jumps # resets to max jump value
 				time_since_grounded = 0
 			

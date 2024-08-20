@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://clnqneypla45e"]
+[gd_scene load_steps=9 format=3 uid="uid://clnqneypla45e"]
 
 [ext_resource type="Script" path="res://Scripts/Sawblade.gd" id="1_t4u5n"]
 [ext_resource type="Texture2D" uid="uid://dmni8t1hsvp6j" path="res://Assets/Saw frame 1.png" id="2_npkip"]
 [ext_resource type="Texture2D" uid="uid://cls4vut2xdetu" path="res://Assets/Saw frame 2.png" id="3_j8i8b"]
 [ext_resource type="Texture2D" uid="uid://qgpah28fyojt" path="res://Assets/Saw frame 3.png" id="4_foyt3"]
+[ext_resource type="AudioStream" uid="uid://ml58huqdeqfo" path="res://Assets/Sounds/sawblade.wav" id="5_o6dhr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0sdcq"]
 animations = [{
@@ -43,3 +44,11 @@ shape = SubResource("RectangleShape2D_n576s")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_cvnvi")
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_o6dhr")
+volume_db = -5.0
+max_distance = 700.0
+max_polyphony = 10
+panning_strength = 2.0
+bus = &"SFX"

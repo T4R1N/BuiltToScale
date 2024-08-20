@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://bbjukcfe2o813"]
+[gd_scene load_steps=18 format=3 uid="uid://bbjukcfe2o813"]
 
+[ext_resource type="Script" path="res://Scripts/Spike.gd" id="1_ceaxw"]
 [ext_resource type="Texture2D" uid="uid://clqf0c4cnknkj" path="res://Assets/SpikeG1.png" id="1_wvn15"]
 [ext_resource type="Texture2D" uid="uid://dpq3cdfe35v0s" path="res://Assets/SpikeG2.png" id="2_gjv1y"]
 [ext_resource type="Texture2D" uid="uid://d33wf22cewioq" path="res://Assets/SpikeG3.png" id="3_jy1rg"]
@@ -73,8 +74,10 @@ size = Vector2(192, 32)
 size = Vector2(192, 64)
 
 [node name="Spikes" type="StaticBody2D"]
+script = ExtResource("1_ceaxw")
+gears = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_rekhk")
@@ -85,8 +88,14 @@ frame_progress = 0.211565
 position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_lro6k")
 
-[node name="SpikeArea" type="Area2D" parent="."]
+[node name="SpikeZone" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeZone"]
 position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_4rc4l")
+
+[node name="SpikeTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="SpikeTimer" to="." method="_on_spike_timer_timeout"]
