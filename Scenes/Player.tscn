@@ -11,8 +11,8 @@
 [ext_resource type="AudioStream" uid="uid://c1d2q43qvrkxf" path="res://Assets/Sounds/explosion2.wav" id="9_t248i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5wt18"]
-radius = 41.0
-height = 290.0
+radius = 29.0
+height = 230.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6326q"]
 streams_count = 4
@@ -375,7 +375,7 @@ _data = {
 script = ExtResource("1_wyj45")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 40)
+position = Vector2(0, 72)
 shape = SubResource("CapsuleShape2D_5wt18")
 
 [node name="SkeletonSprite" type="Sprite2D" parent="."]
