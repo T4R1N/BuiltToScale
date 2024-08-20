@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RobotLeg" load_steps=3 format=3 uid="uid://ddr12gpwnahiv"]
+
+[ext_resource type="Script" path="res://Robot/Limbs/Legs/RobotLeg.gd" id="1_5q42a"]
+[ext_resource type="Texture2D" uid="uid://30atkelmx8td" path="res://Robot/Limbs/Legs/MummyLeg.png" id="2_rahak"]
+
+[resource]
+script = ExtResource("1_5q42a")
+speed_boost = 0.0
+accel_boost = 0.0
+jump_boost = 0.0
+mass = 2.0
+durability = 5.0
+texture = ExtResource("2_rahak")
+type = "Makeshift"

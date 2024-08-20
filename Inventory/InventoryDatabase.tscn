@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Inventory/InventoryDatabase.gd" id="1_kpvxv"]
 [ext_resource type="Resource" uid="uid://b081nwewto1mn" path="res://Robot/Skeletons/MakeshiftBipedal.tres" id="2_goo0s"]
-[ext_resource type="Resource" uid="uid://b2oeymhf5384d" path="res://Robot/Limbs/Arms/MakeshiftArm.tres" id="3_mnukb"]
-[ext_resource type="Resource" uid="uid://di4glhrmsc5ff" path="res://Robot/Limbs/Legs/MakeshiftLeg.tres" id="4_ybkst"]
+[ext_resource type="Resource" uid="uid://kab67fn0b884" path="res://Robot/Limbs/Arms/MummyArm.tres" id="3_jbojk"]
+[ext_resource type="Resource" uid="uid://ddr12gpwnahiv" path="res://Robot/Limbs/Legs/MummyLeg.tres" id="4_p44gn"]
 [ext_resource type="Resource" uid="uid://canq0lhp8h867" path="res://Inventory/DefaultInvData.tres" id="5_hgtph"]
 [ext_resource type="Resource" uid="uid://c6mbuv2usj2vh" path="res://Robot/Skeletons/SuperBipedal.tres" id="6_ogcig"]
 [ext_resource type="Resource" uid="uid://pshmp2388fhw" path="res://Robot/Skeletons/AdequateBipedal2.tres" id="7_p4wpu"]
@@ -14,6 +14,6 @@
 
 [node name="InventoryDatabase" type="Node"]
 script = ExtResource("1_kpvxv")
-inf_inventory = Array[Resource("res://Robot/AbstractRobotPiece.gd")]([ExtResource("2_goo0s"), ExtResource("3_mnukb"), ExtResource("4_ybkst")])
+inf_inventory = Array[Resource("res://Robot/AbstractRobotPiece.gd")]([ExtResource("9_qyq78"), ExtResource("3_jbojk"), ExtResource("4_p44gn")])
 inventory = ExtResource("5_hgtph")
 skeletons = Array[Resource("res://Robot/Skeletons/RobotSkeleton.gd")]([ExtResource("2_goo0s"), ExtResource("6_ogcig"), ExtResource("7_p4wpu"), ExtResource("8_dglou"), ExtResource("9_qyq78"), ExtResource("10_8vt2x"), ExtResource("11_qlc27")])
