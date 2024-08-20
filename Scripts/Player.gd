@@ -187,7 +187,19 @@ func _physics_process(delta):
 				velocity.x = move_toward(velocity.x, maxSpeed * direction, acceleration * delta)
 			elif can_move_in_air && direction: # the && direction exists so you don't decelerate when not holding keys
 				velocity.x = move_toward(velocity.x, maxSpeed * direction, acceleration / 2 * delta)
-		
+		else: #Dead
+			if !is_on_floor():
+				#if Input.is_action_pressed("Jump") and velocity.y < 0:
+					#gravity = 1200
+				#else:
+					#gravity = 1600
+				velocity.y += gravity * delta
+				time_since_grounded += delta
+			else:
+				cur_grap += delta * 200
+				cur_grap = clamp(cur_grap, 0, grapple_strength)
+				additional_jumps = num_jumps # resets to max jump value
+				time_since_grounded = 0
 	# Fall Damage
 	if prevVelocity.y > JUMP_VELOCITY * -2.5 and is_on_floor():
 		take_damage(pow(prevVelocity.y / (JUMP_VELOCITY * -1), 2))
@@ -201,7 +213,7 @@ func _physics_process(delta):
 			prevWalk = walkmod
 			walkmod = fmod($Animations.current_animation_position, 0.5)
 			if prevWalk > walkmod:
-				$walk.pitch_scale = randf_range(0.5, 0.8)
+				$walk.pitch_scale = randf_range(0.2, 0.25)
 				$walk.play()
 		else:
 			$Animations.play("idle")

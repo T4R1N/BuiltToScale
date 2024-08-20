@@ -436,6 +436,7 @@ one_shot = true
 [node name="walk" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_dvmq7")
 volume_db = -9.275
+pitch_scale = 0.12
 bus = &"SFX"
 
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
