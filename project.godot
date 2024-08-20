@@ -13,7 +13,8 @@ config_version=5
 config/name="Designed To Climb"
 run/main_scene="res://Scenes/Main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="res://icon.PNG"
+config/icon="res://icon.PNG"
 
 [display]
 
