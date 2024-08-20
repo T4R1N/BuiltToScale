@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://lbttidtwr61x"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_wyj45"]
-[ext_resource type="Texture2D" uid="uid://det64rt03jw4j" path="res://Assets/MakeshiftSkeleton.png" id="2_p51s8"]
+[ext_resource type="Texture2D" uid="uid://cot2j37n8dlle" path="res://Robot/Skeletons/ArcadeSkeleton.png" id="2_c61r2"]
 [ext_resource type="Texture2D" uid="uid://djxay0ro0cjaf" path="res://Robot/Limbs/Arms/MakeshiftArm.png" id="3_jx6rc"]
 [ext_resource type="Texture2D" uid="uid://c8opdlu26ssbc" path="res://Robot/Limbs/Legs/MakeshiftLeg.png" id="4_430jv"]
 [ext_resource type="AudioStream" uid="uid://bgutocea7r8lx" path="res://Assets/Sounds/scream.wav" id="5_iqjjb"]
@@ -11,8 +11,8 @@
 [ext_resource type="AudioStream" uid="uid://c1d2q43qvrkxf" path="res://Assets/Sounds/explosion2.wav" id="9_t248i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5wt18"]
-radius = 41.0
-height = 290.0
+radius = 29.0
+height = 208.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6326q"]
 streams_count = 4
@@ -72,10 +72,10 @@ tracks/0/path = NodePath("SkeletonSprite/Arm1:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1667, 0.333, 0.5001, 0.666, 0.8335),
+"times": PackedFloat32Array(0, 0.1667, 0.333, 0.5001, 0.6668, 0.8335),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-8.75, -11.5), Vector2(-11.833, -11.75), Vector2(-9, -10.5), Vector2(-10, -9.75), Vector2(-11.75, -10.5), Vector2(-10.25, -10.25)]
+"values": [Vector2(-4.75, -7.5), Vector2(-7.833, -7.75), Vector2(-5, -6.5), Vector2(-6, -5.75), Vector2(-7.75, -6.5), Vector2(-6.25, -6.25)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -99,7 +99,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.1667, 0.3334, 0.5001, 0.6668, 0.8335),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(15.25, -11.5), Vector2(14.25, -11.25), Vector2(13.5, -11.25), Vector2(10.75, -11.5), Vector2(13, -11), Vector2(13.75, -11.5)]
+"values": [Vector2(11.25, -7.5), Vector2(10.25, -7.25), Vector2(9.5, -7.25), Vector2(6.75, -7.5), Vector2(9, -7), Vector2(9.75, -7.5)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -123,7 +123,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.1667, 0.3334, 0.5001, 0.6668, 0.8335),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-6.25, 34.75), Vector2(-4.5, 34.75), Vector2(-6.75, 34), Vector2(-5, 34.5), Vector2(-9.5, 33), Vector2(-3.25, 34.5)]
+"values": [Vector2(-6.25, 24.75), Vector2(-4.5, 24.75), Vector2(-6.75, 24), Vector2(-5, 24.5), Vector2(-9.5, 23), Vector2(-3.25, 24.5)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -147,7 +147,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.1667, 0.3334, 0.5001, 0.6668, 0.8335),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(7.5, 33.25), Vector2(9.25, 34), Vector2(6.25, 35), Vector2(8.5, 35), Vector2(6.75, 34), Vector2(7, 34.75)]
+"values": [Vector2(7.5, 23.25), Vector2(9.25, 24), Vector2(6.25, 25), Vector2(8.5, 25), Vector2(6.75, 24), Vector2(7, 24.75)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -176,7 +176,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-14.25, 7.25), Vector2(-13, 7.5)]
+"values": [Vector2(-10.25, 11.25), Vector2(-9, 11.5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -200,7 +200,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(11, 7.75), Vector2(11.75, 8)]
+"values": [Vector2(7, 11.75), Vector2(7.75, 12)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -224,7 +224,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-5, 34)]
+"values": [Vector2(-5, 24)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -248,7 +248,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(6.5, 34)]
+"values": [Vector2(6.5, 24)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -325,7 +325,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.0909, 0.1818, 0.2727, 0.3636, 0.4545, 0.5454, 0.6363, 0.7272, 0.8181, 0.909),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-21.75, 3.75), Vector2(-18, 6.75), Vector2(-12.25, 7.75), Vector2(-8.5, 7.25), Vector2(-7.5, 5.5), Vector2(-4.5, 2.75), Vector2(-4.25, 4.25), Vector2(-7.5, 6.5), Vector2(-10.5, 7), Vector2(-14.5, 7.5), Vector2(-18.5, 7)]
+"values": [Vector2(-17.75, 7.75), Vector2(-14, 10.75), Vector2(-8.25, 11.75), Vector2(-4.5, 11.25), Vector2(-3.5, 9.5), Vector2(-0.5, 6.75), Vector2(-0.25, 8.25), Vector2(-3.5, 10.5), Vector2(-6.5, 11), Vector2(-10.5, 11.5), Vector2(-14.5, 11)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -349,7 +349,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.0909, 0.1818, 0.2727, 0.3636, 0.4545, 0.5454, 0.6363, 0.7272, 0.8181, 0.909),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(22.5, 3.75), Vector2(18, 7), Vector2(14, 8.5), Vector2(14, 8.5), Vector2(10.25, 8), Vector2(4.75, 6), Vector2(7.75, 7), Vector2(10.5, 7.75), Vector2(16, 7.75), Vector2(17.5, 7), Vector2(21.5, 4.75)]
+"values": [Vector2(18.5, 7.75), Vector2(18, 7), Vector2(14, 8.5), Vector2(14, 8.5), Vector2(10.25, 8), Vector2(4.75, 6), Vector2(7.75, 7), Vector2(10.5, 7.75), Vector2(16, 7.75), Vector2(17.5, 7), Vector2(21.5, 4.75)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -375,33 +375,33 @@ _data = {
 script = ExtResource("1_wyj45")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 40)
+position = Vector2(0, 43)
 shape = SubResource("CapsuleShape2D_5wt18")
 
 [node name="SkeletonSprite" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)
-texture = ExtResource("2_p51s8")
+texture = ExtResource("2_c61r2")
 
 [node name="Arm1" type="Sprite2D" parent="SkeletonSprite"]
-position = Vector2(-8.75, -11.5)
-rotation = -2.86083
+position = Vector2(-2.4765, 9.79142)
+rotation = -0.789306
 texture = ExtResource("3_jx6rc")
 
 [node name="Arm2" type="Sprite2D" parent="SkeletonSprite"]
 z_index = -1
-position = Vector2(15.25, -11.5)
-rotation = -2.92658
+position = Vector2(9.63396, 7.51381)
+rotation = 0.0777381
 texture = ExtResource("3_jx6rc")
 
 [node name="Arm3" type="Sprite2D" parent="SkeletonSprite"]
-position = Vector2(-6.25, 34.75)
-rotation = 0.085569
+position = Vector2(-7.67539, 35.7362)
+rotation = 0.357211
 texture = ExtResource("4_430jv")
 
 [node name="Arm4" type="Sprite2D" parent="SkeletonSprite"]
 z_index = -1
-position = Vector2(7.5, 33.25)
-rotation = -0.06451
+position = Vector2(-0.653342, 28.7914)
+rotation = 1.24881
 texture = ExtResource("4_430jv")
 
 [node name="scream" type="AudioStreamPlayer" parent="."]
@@ -410,7 +410,7 @@ bus = &"SFX"
 
 [node name="hurt" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_6326q")
-volume_db = -1.68
+volume_db = -5.0
 max_polyphony = 4
 bus = &"SFX"
 
