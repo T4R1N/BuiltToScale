@@ -277,7 +277,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.0909, 0.1818, 0.2727, 0.3636, 0.4545, 0.5454, 0.6363, 0.7272, 0.8181, 0.909),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-14, 29), Vector2(-14.25, 28), Vector2(-5.75, 33), Vector2(-3.75, 33.5), Vector2(2.25, 32.75), Vector2(2, 35.75), Vector2(-4.25, 36.25), Vector2(-9.25, 35.5), Vector2(-13.25, 35.25), Vector2(-16.5, 29.75), Vector2(-16.25, 27.5)]
+"values": [Vector2(-14, 19), Vector2(-14.25, 18), Vector2(-5.75, 23), Vector2(-3.75, 23.5), Vector2(2.25, 22.75), Vector2(2, 25.75), Vector2(-4.25, 26.25), Vector2(-9.25, 25.5), Vector2(-13.25, 25.25), Vector2(-16.5, 19.75), Vector2(-16.25, 17.5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -301,7 +301,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.0909, 0.1818, 0.2727, 0.3636, 0.4545, 0.5454, 0.6363, 0.7272, 0.8181, 0.909),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(9.25, 35.5), Vector2(4.5, 35.75), Vector2(-1.5, 36), Vector2(-2.25, 32.75), Vector2(-2, 30.5), Vector2(-7.5, 28), Vector2(-4.25, 27.25), Vector2(0.999999, 29.5), Vector2(4.25, 31.75), Vector2(8.75, 33.5), Vector2(11, 33)]
+"values": [Vector2(9.25, 25.5), Vector2(4.5, 25.75), Vector2(-1.5, 26), Vector2(-2.25, 22.75), Vector2(-2, 20.5), Vector2(-7.5, 18), Vector2(-4.25, 17.25), Vector2(1, 19.5), Vector2(4.25, 21.75), Vector2(8.75, 23.5), Vector2(11, 23)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -349,7 +349,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.0909, 0.1818, 0.2727, 0.3636, 0.4545, 0.5454, 0.6363, 0.7272, 0.8181, 0.909),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(18.5, 7.75), Vector2(18, 7), Vector2(14, 8.5), Vector2(14, 8.5), Vector2(10.25, 8), Vector2(4.75, 6), Vector2(7.75, 7), Vector2(10.5, 7.75), Vector2(16, 7.75), Vector2(17.5, 7), Vector2(21.5, 4.75)]
+"values": [Vector2(14.5, 7.75), Vector2(14, 11), Vector2(10, 12.5), Vector2(10, 12.5), Vector2(6.25, 12), Vector2(0.75, 10), Vector2(3.75, 11), Vector2(6.5, 11.75), Vector2(12, 11.75), Vector2(13.5, 11), Vector2(17.5, 8.75)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -383,25 +383,25 @@ scale = Vector2(4, 4)
 texture = ExtResource("2_c61r2")
 
 [node name="Arm1" type="Sprite2D" parent="SkeletonSprite"]
-position = Vector2(-2.4765, 9.79142)
-rotation = -0.789306
+position = Vector2(-8.80858, 11.6529)
+rotation = -0.112413
 texture = ExtResource("3_jx6rc")
 
 [node name="Arm2" type="Sprite2D" parent="SkeletonSprite"]
 z_index = -1
-position = Vector2(9.63396, 7.51381)
-rotation = 0.0777381
+position = Vector2(10.3886, 12.3543)
+rotation = -0.385721
 texture = ExtResource("3_jx6rc")
 
 [node name="Arm3" type="Sprite2D" parent="SkeletonSprite"]
-position = Vector2(-7.67539, 35.7362)
-rotation = 0.357211
+position = Vector2(-6.57573, 22.5143)
+rotation = 0.864915
 texture = ExtResource("4_430jv")
 
 [node name="Arm4" type="Sprite2D" parent="SkeletonSprite"]
 z_index = -1
-position = Vector2(-0.653342, 28.7914)
-rotation = 1.24881
+position = Vector2(-0.917133, 25.9757)
+rotation = 0.720227
 texture = ExtResource("4_430jv")
 
 [node name="scream" type="AudioStreamPlayer" parent="."]
