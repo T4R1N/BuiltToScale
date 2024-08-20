@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://xjci2p0oquym"]
+[gd_scene load_steps=12 format=3 uid="uid://xjci2p0oquym"]
 
 [ext_resource type="PackedScene" uid="uid://lbttidtwr61x" path="res://Scenes/Player.tscn" id="1_yy72t"]
 [ext_resource type="Resource" uid="uid://ccrvgoqha86lu" path="res://Robot/Skeletons/MakeshiftBipedal.tres" id="2_ge4ut"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://clnqneypla45e" path="res://Scenes/Sawblade.tscn" id="6_s7ot8"]
 [ext_resource type="PackedScene" uid="uid://cew6fedv6vq1x" path="res://Scenes/GrabPoint.tscn" id="7_yle4h"]
 [ext_resource type="PackedScene" uid="uid://dgylcv4p02iem" path="res://Inventory/Item.tscn" id="8_w1c17"]
+[ext_resource type="PackedScene" uid="uid://bbjukcfe2o813" path="res://Scenes/Spike.tscn" id="9_w32su"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a61kd"]
 texture = ExtResource("3_x7bc4")
@@ -446,16 +447,7 @@ position = Vector2(1344, 576)
 [node name="Sawblade3" parent="." instance=ExtResource("6_s7ot8")]
 position = Vector2(1472, 576)
 
-[node name="Item2" parent="." instance=ExtResource("8_w1c17")]
-position = Vector2(867, 119)
-
-[node name="Item3" parent="." instance=ExtResource("8_w1c17")]
-position = Vector2(253, -239)
-
-[node name="Item4" parent="." instance=ExtResource("8_w1c17")]
-position = Vector2(499, -709)
-
-[node name="Item5" parent="." instance=ExtResource("8_w1c17")]
-position = Vector2(2128, 189)
+[node name="Spikes" parent="." instance=ExtResource("9_w32su")]
+position = Vector2(1024, 512)
 
 [connection signal="climb" from="GrabPoint" to="Player" method="set_canClimb"]
