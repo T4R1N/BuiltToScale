@@ -125,6 +125,7 @@ func _physics_process(delta):
 		scream_played = false
 		
 		# Climbing
+		
 		if canClimb and Input.is_action_pressed("Grab") and cur_grap > 0:
 			isClimbing = true
 		else:

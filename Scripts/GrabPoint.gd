@@ -10,6 +10,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	canClimb = false
+	for body in get_overlapping_bodies():
+		if body is Player:
+			canClimb = true
+	
 	player.canClimb = canClimb
 
 

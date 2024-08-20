@@ -9,7 +9,6 @@ extends Node2D
 @onready var skeleton_slots: Array[InvSlot] = [$CanvasLayer/Control/SkeletonInventory/LeftArm, $CanvasLayer/Control/SkeletonInventory/RightArm, $CanvasLayer/Control/SkeletonInventory/LeftLeg, $CanvasLayer/Control/SkeletonInventory/RightLeg]
 
 var cur_skelly: RobotSkeleton = preload("res://Robot/Skeletons/MakeshiftBipedal.tres")
-
 func passes_checks(): # If the player tries to play without filling out the character's limbs, it won't work
 	for arm in cur_skelly.arms:
 		if arm == null:

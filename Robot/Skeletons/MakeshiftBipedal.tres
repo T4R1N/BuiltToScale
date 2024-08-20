@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="RobotSkeleton" load_steps=3 format=3 uid="uid://b081nwewto1mn"]
 
-[ext_resource type="Texture2D" uid="uid://det64rt03jw4j" path="res://Assets/MakeshiftSkeleton.png" id="2_0l15e"]
+[ext_resource type="Texture2D" uid="uid://cot2j37n8dlle" path="res://Robot/Skeletons/ArcadeSkeleton.png" id="2_5tjrn"]
 [ext_resource type="Script" path="res://Robot/Skeletons/RobotSkeleton.gd" id="5_pps7t"]
 
 [resource]
@@ -11,5 +11,5 @@ augments = Array[Resource("res://Robot/Augments/RobotAugment.gd")]([])
 designation = "Bipedal"
 mass = 3.0
 durability = 5.0
-texture = ExtResource("2_0l15e")
+texture = ExtResource("2_5tjrn")
 type = "Makeshift"
