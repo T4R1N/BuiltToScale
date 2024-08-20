@@ -30,13 +30,18 @@ var cancel_jump = false
 
 var DEAD = false
 
-@onready var mass = skeleton.mass
-@onready var max_hp = skeleton.durability
+var mass: float
+var max_hp: float
+
 @onready var ingame_ui = $"../IngameUI"
 @onready var inv_database = get_node("/root/Main/InventoryDatabase")
 
 func build():
 	skeleton = inv_database.cur_skelly
+	
+	mass = skeleton.mass
+	max_hp = skeleton.durability
+	
 	print(str(skeleton.type) + str(skeleton.arms) + str(skeleton.legs))
 	for i in skeleton.arms:
 		mass += i.mass

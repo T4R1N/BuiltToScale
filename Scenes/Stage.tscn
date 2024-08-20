@@ -1,12 +1,12 @@
 [gd_scene load_steps=17 format=3 uid="uid://xjci2p0oquym"]
 
 [ext_resource type="PackedScene" uid="uid://lbttidtwr61x" path="res://Scenes/Player.tscn" id="1_yy72t"]
-[ext_resource type="Resource" uid="uid://b081nwewto1mn" path="res://Robot/Skeletons/MakeshiftBipedal.tres" id="2_ge4ut"]
 [ext_resource type="PackedScene" uid="uid://ctf3x6h5lsns6" path="res://Scenes/Camera.tscn" id="3_3c7m6"]
 [ext_resource type="Texture2D" uid="uid://0jco0ibkja2w" path="res://Assets/Snow platform tileset.png" id="3_x7bc4"]
 [ext_resource type="PackedScene" uid="uid://ca15o1d2nemi6" path="res://Scenes/IngameUI.tscn" id="5_6xs6y"]
 [ext_resource type="PackedScene" uid="uid://clnqneypla45e" path="res://Scenes/Sawblade.tscn" id="6_s7ot8"]
 [ext_resource type="PackedScene" uid="uid://cew6fedv6vq1x" path="res://Scenes/GrabPoint.tscn" id="7_yle4h"]
+[ext_resource type="Resource" uid="uid://b0bb0fdyh5tgw" path="res://Robot/Skeletons/AdequateBipedal3.tres" id="8_h3lr3"]
 [ext_resource type="PackedScene" uid="uid://dgylcv4p02iem" path="res://Inventory/Item.tscn" id="8_w1c17"]
 [ext_resource type="PackedScene" uid="uid://bbjukcfe2o813" path="res://Scenes/Spike.tscn" id="9_w32su"]
 [ext_resource type="Theme" uid="uid://cwpm0manfxk76" path="res://Assets/tres/MainGUI.tres" id="10_tdmkx"]
@@ -549,7 +549,6 @@ scale = Vector2(-0.921439, 34.7229)
 
 [node name="Player" parent="." instance=ExtResource("1_yy72t")]
 position = Vector2(256, 320)
-skeleton = ExtResource("2_ge4ut")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(4, 4)
@@ -572,12 +571,16 @@ position = Vector2(1216, 576)
 
 [node name="Item" parent="." instance=ExtResource("8_w1c17")]
 position = Vector2(1920, -256)
+item = ExtResource("8_h3lr3")
 
 [node name="Sawblade4" parent="." instance=ExtResource("6_s7ot8")]
 position = Vector2(1344, 576)
 
 [node name="Sawblade5" parent="." instance=ExtResource("6_s7ot8")]
 position = Vector2(1472, 576)
+
+[node name="Spikes" parent="." instance=ExtResource("9_w32su")]
+position = Vector2(1024, 512)
 
 [node name="Label" type="Label" parent="."]
 z_index = -3

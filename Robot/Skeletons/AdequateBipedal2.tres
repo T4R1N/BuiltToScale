@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="RobotSkeleton" load_steps=3 format=3 uid="uid://pshmp2388fhw"]
+
+[ext_resource type="Script" path="res://Robot/Skeletons/RobotSkeleton.gd" id="1_887f7"]
+[ext_resource type="Texture2D" uid="uid://ctu4sdb3truk4" path="res://Robot/Skeletons/FazbearSkeleton.png" id="2_t4tep"]
+
+[resource]
+script = ExtResource("1_887f7")
+arms = Array[Resource("res://Robot/Limbs/Arms/RobotArm.gd")]([null, null])
+legs = Array[Resource("res://Robot/Limbs/Legs/RobotLeg.gd")]([null, null])
+augments = Array[Resource("res://Robot/Augments/RobotAugment.gd")]([null, null])
+designation = "Bipedal"
+mass = 3.0
+durability = 6.0
+texture = ExtResource("2_t4tep")
+type = "Adequate"
