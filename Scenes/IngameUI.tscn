@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ca15o1d2nemi6"]
+[gd_scene load_steps=6 format=3 uid="uid://ca15o1d2nemi6"]
 
 [ext_resource type="Script" path="res://Scripts/IngameUI.gd" id="1_0clcf"]
 [ext_resource type="Theme" uid="uid://cwpm0manfxk76" path="res://Assets/tres/MainGUI.tres" id="1_k8x0y"]
 [ext_resource type="Script" path="res://Scripts/AugContainer.gd" id="3_od63x"]
 [ext_resource type="PackedScene" uid="uid://byf5eu43xikv7" path="res://Scenes/AugInfo.tscn" id="4_j0rbh"]
+[ext_resource type="Script" path="res://Scripts/GrappleStrength.gd" id="5_qxkdj"]
 
 [node name="IngameUI" type="CanvasLayer"]
 script = ExtResource("1_0clcf")
@@ -91,6 +92,7 @@ anchor_bottom = 1.0
 offset_top = -27.0
 grow_horizontal = 2
 grow_vertical = 0
+script = ExtResource("5_qxkdj")
 
 [node name="GrappleStrengthL" type="ProgressBar" parent="Control/GrappleContainer"]
 layout_mode = 2
@@ -98,6 +100,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 theme = ExtResource("1_k8x0y")
 max_value = 1.0
+step = 0.001
 fill_mode = 1
 show_percentage = false
 
@@ -107,4 +110,5 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 theme = ExtResource("1_k8x0y")
 max_value = 1.0
+step = 0.001
 show_percentage = false

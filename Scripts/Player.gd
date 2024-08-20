@@ -120,7 +120,7 @@ func _physics_process(delta):
 		scream_played = false
 		
 		# Climbing
-		if canClimb and Input.is_action_pressed("Grab"):
+		if canClimb and Input.is_action_pressed("Grab") and cur_grap > 0:
 			isClimbing = true
 		else:
 			isClimbing = false
@@ -129,7 +129,7 @@ func _physics_process(delta):
 			gravity = 0
 			var climbDir = Vector2(Input.get_axis("Left", "Right"), Input.get_axis("Jump", "Down")).normalized()
 			if climbDir:
-				cur_grap -= delta * 10
+				cur_grap -= delta * 100
 				cur_grap = clamp(cur_grap, 0, grapple_strength)
 			velocity = velocity.move_toward(maxSpeed / 2.0 * climbDir, acceleration * delta)
 		else:
@@ -147,7 +147,7 @@ func _physics_process(delta):
 				velocity.y += gravity * delta
 				time_since_grounded += delta
 			else:
-				cur_grap += delta * 20
+				cur_grap += delta * 200
 				cur_grap = clamp(cur_grap, 0, grapple_strength)
 				additional_jumps = num_jumps # resets to max jump value
 				time_since_grounded = 0

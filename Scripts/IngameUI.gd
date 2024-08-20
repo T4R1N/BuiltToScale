@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var dura_label = $Control/DataContainer/DuraLabel
 @onready var mass_label = $Control/DataContainer/MassLabel
 
+
 func set_gui_label(which: String, data: float):
 	match which:
 		"Durability":
