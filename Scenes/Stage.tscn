@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ca15o1d2nemi6" path="res://Scenes/IngameUI.tscn" id="5_6xs6y"]
 [ext_resource type="PackedScene" uid="uid://clnqneypla45e" path="res://Scenes/Sawblade.tscn" id="6_s7ot8"]
 [ext_resource type="PackedScene" uid="uid://cew6fedv6vq1x" path="res://Scenes/GrabPoint.tscn" id="7_yle4h"]
-[ext_resource type="Theme" path="res://Assets/tres/MainGUI.tres" id="10_tdmkx"]
+[ext_resource type="Theme" uid="uid://cwpm0manfxk76" path="res://Assets/tres/MainGUI.tres" id="10_tdmkx"]
 [ext_resource type="Texture2D" uid="uid://c3t54wgaygt4b" path="res://Assets/ClimbingWallBlue.png" id="11_yk2dj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_on5aw"]
