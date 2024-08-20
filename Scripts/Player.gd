@@ -133,11 +133,12 @@ func _physics_process(delta):
 		if isClimbing:
 			gravity = 0
 			var climbDir = Vector2(Input.get_axis("Left", "Right"), Input.get_axis("Jump", "Down")).normalized()
+			cur_grap -= delta * 50
 			if climbDir:
 				cur_grap -= delta * 100
 				cur_grap = clamp(cur_grap, 0, grapple_strength)
 			velocity = velocity.move_toward(maxSpeed / 2.0 * climbDir, acceleration * delta)
-		else:
+		elif !DEAD:
 			gravity = 1600
 			
 			# BEGIN REGULAR PLATFORM CODE
@@ -203,6 +204,7 @@ func _physics_process(delta):
 	
 	if hp <= 0 or global_position.y > 10000:
 		DEAD = true
+		velocity = Vector2.ZERO
 	
 	if DEAD:
 		$"/root/Main".death()

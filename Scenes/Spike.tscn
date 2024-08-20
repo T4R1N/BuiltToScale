@@ -68,10 +68,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lro6k"]
-size = Vector2(192, 32)
+size = Vector2(192, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4rc4l"]
-size = Vector2(192, 64)
+size = Vector2(192, 32)
 
 [node name="Spikes" type="StaticBody2D"]
 script = ExtResource("1_ceaxw")
@@ -81,17 +81,16 @@ gears = true
 position = Vector2(0, -2)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_rekhk")
-animation = &"gears"
-frame_progress = 0.211565
+animation = &"without"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_lro6k")
 
 [node name="SpikeZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeZone"]
-position = Vector2(0, -32)
+position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_4rc4l")
 
 [node name="SpikeTimer" type="Timer" parent="."]

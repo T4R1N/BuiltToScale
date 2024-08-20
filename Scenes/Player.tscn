@@ -410,7 +410,7 @@ bus = &"SFX"
 
 [node name="hurt" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_6326q")
-volume_db = -1.68
+volume_db = -5.0
 max_polyphony = 4
 bus = &"SFX"
 
