@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://xjci2p0oquym"]
+[gd_scene load_steps=13 format=3 uid="uid://xjci2p0oquym"]
 
 [ext_resource type="PackedScene" uid="uid://lbttidtwr61x" path="res://Scenes/Player.tscn" id="1_yy72t"]
-[ext_resource type="Resource" uid="uid://ccrvgoqha86lu" path="res://Robot/Skeletons/MakeshiftBipedal.tres" id="2_ge4ut"]
+[ext_resource type="Resource" uid="uid://b081nwewto1mn" path="res://Robot/Skeletons/MakeshiftBipedal.tres" id="2_ge4ut"]
 [ext_resource type="PackedScene" uid="uid://ctf3x6h5lsns6" path="res://Scenes/Camera.tscn" id="3_3c7m6"]
 [ext_resource type="Texture2D" uid="uid://0jco0ibkja2w" path="res://Assets/Snow platform tileset.png" id="3_x7bc4"]
 [ext_resource type="PackedScene" uid="uid://ca15o1d2nemi6" path="res://Scenes/IngameUI.tscn" id="5_6xs6y"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cew6fedv6vq1x" path="res://Scenes/GrabPoint.tscn" id="7_yle4h"]
 [ext_resource type="PackedScene" uid="uid://dgylcv4p02iem" path="res://Inventory/Item.tscn" id="8_w1c17"]
 [ext_resource type="PackedScene" uid="uid://bbjukcfe2o813" path="res://Scenes/Spike.tscn" id="9_w32su"]
+[ext_resource type="Theme" path="res://Assets/tres/MainGUI.tres" id="10_tdmkx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a61kd"]
 texture = ExtResource("3_x7bc4")
@@ -430,24 +431,26 @@ layer_0/tile_data = PackedInt32Array(524288, 0, 0, 524289, 524288, 0, 524290, 58
 [node name="Sawblade" parent="." instance=ExtResource("6_s7ot8")]
 position = Vector2(1216, 576)
 
-[node name="Sawblade2" parent="." instance=ExtResource("6_s7ot8")]
-position = Vector2(1947, 391)
-scale = Vector2(0.423988, 0.423988)
-
-[node name="Sawblade3" parent="." instance=ExtResource("6_s7ot8")]
-position = Vector2(1944, 151)
-scale = Vector2(0.423988, 0.423988)
-
 [node name="Item" parent="." instance=ExtResource("8_w1c17")]
 position = Vector2(1920, -256)
 
-[node name="Sawblade2" parent="." instance=ExtResource("6_s7ot8")]
+[node name="Sawblade4" parent="." instance=ExtResource("6_s7ot8")]
 position = Vector2(1344, 576)
 
-[node name="Sawblade3" parent="." instance=ExtResource("6_s7ot8")]
+[node name="Sawblade5" parent="." instance=ExtResource("6_s7ot8")]
 position = Vector2(1472, 576)
 
 [node name="Spikes" parent="." instance=ExtResource("9_w32su")]
 position = Vector2(1024, 512)
+
+[node name="Label" type="Label" parent="."]
+z_index = -3
+offset_left = 2.0
+offset_top = 302.0
+offset_right = 207.0
+offset_bottom = 440.0
+theme = ExtResource("10_tdmkx")
+text = "Don't jump into the pit!"
+autowrap_mode = 2
 
 [connection signal="climb" from="GrabPoint" to="Player" method="set_canClimb"]

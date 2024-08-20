@@ -37,7 +37,7 @@ var DEAD = false
 
 func build():
 	skeleton = inv_database.cur_skelly
-	
+	print(str(skeleton.type) + str(skeleton.arms) + str(skeleton.legs))
 	for i in skeleton.arms:
 		mass += i.mass
 		max_hp += i.durability
@@ -71,11 +71,10 @@ func build():
 	ingame_ui.set_gui_label("Grapple", grapple_strength)
 	
 	$SkeletonSprite.texture = skeleton.texture
-	match skeleton.designation:
-		"Bipedal":
-			pass
-		"Bipedal+":
-			pass
+	$SkeletonSprite/Arm1.texture = skeleton.arms[0].texture
+	$SkeletonSprite/Arm2.texture = skeleton.arms[1].texture
+	$SkeletonSprite/Arm3.texture = skeleton.legs[0].texture
+	$SkeletonSprite/Arm4.texture = skeleton.legs[1].texture
 
 func flip_all_sprites():
 	if velocity.x > 0:

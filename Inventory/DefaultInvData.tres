@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="InvData" load_steps=3 format=3 uid="uid://canq0lhp8h867"]
+
+[ext_resource type="Resource" uid="uid://ccs1cm76xsypy" path="res://Robot/Limbs/Legs/SuperLeg.tres" id="1_q08tx"]
+[ext_resource type="Script" path="res://Inventory/InvData.gd" id="2_54df5"]
+
+[resource]
+script = ExtResource("2_54df5")
+inv_data = Array[Resource("res://Robot/AbstractRobotPiece.gd")]([ExtResource("1_q08tx"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])

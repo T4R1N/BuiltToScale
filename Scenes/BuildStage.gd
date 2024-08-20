@@ -56,7 +56,7 @@ func load_slots(): # I'm very sorry about my awful, unreadable code.
 	for i in range(slots.size()):
 		slots[i].which_inv_type = "Regular"
 		
-		var correspo_piece = inv_database.inventory[i]
+		var correspo_piece = inv_database.inventory.inv_data[i]
 		if correspo_piece != null:
 			slots[i].hold = correspo_piece
 			slots[i].set_sprite(correspo_piece.texture)

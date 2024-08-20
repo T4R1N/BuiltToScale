@@ -12,4 +12,4 @@ designation = "Bipedal+"
 mass = 3.0
 durability = 5.0
 texture = ExtResource("2_0l15e")
-type = "Super"
+type = "Makeshift"
