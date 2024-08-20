@@ -204,10 +204,8 @@ func _physics_process(delta):
 	
 	if hp <= 0 or global_position.y > 10000:
 		DEAD = true
-		velocity = Vector2.ZERO
+		if is_on_floor():
+			velocity.x = 0
 	
 	if DEAD:
 		$"/root/Main".death()
-
-func set_canClimb(val: bool):
-	canClimb = val
