@@ -218,6 +218,11 @@ position = Vector2(3008, -512)
 rotation = 0.157897
 scale = Vector2(1.95989, 3.11456)
 
+[node name="GrabPoint2" parent="." instance=ExtResource("7_yle4h")]
+position = Vector2(1152, -1088)
+rotation = 0.157897
+scale = Vector2(2.19296, 5.21023)
+
 [node name="Sawblade" parent="." instance=ExtResource("6_s7ot8")]
 position = Vector2(3072, -128)
 
