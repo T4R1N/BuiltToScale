@@ -8,6 +8,9 @@ const camOffset = Vector2(0, -100) # offset from the target position
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global_position = target.get_global_position()
+	var width_ratio = DisplayServer.window_get_size().x / 2560.0
+	zoom = Vector2(width_ratio, width_ratio)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
