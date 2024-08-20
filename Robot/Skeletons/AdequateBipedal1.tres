@@ -9,6 +9,7 @@ arms = Array[Resource("res://Robot/Limbs/Arms/RobotArm.gd")]([null, null])
 legs = Array[Resource("res://Robot/Limbs/Legs/RobotLeg.gd")]([null, null])
 augments = Array[Resource("res://Robot/Augments/RobotAugment.gd")]([null, null])
 designation = "Bipedal"
+extra_jumps = 0
 mass = 3.0
 durability = 6.0
 texture = ExtResource("2_krn2v")

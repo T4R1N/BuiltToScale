@@ -155,22 +155,33 @@ func set_skel_val(holding: AbstractRobotPiece, right: bool, which_inv_type: Stri
 				cur_skelly.legs[0] = null
 			"RightLeg":
 				cur_skelly.legs[1] = null
+	#elif not holding is RobotSkeleton && which_inv_type == "Regular":
+		#inv_database.pickup(which_slot.hold)
 	
 	if holding is RobotArm:
 		if right:
 			cur_skelly.arms[1] = holding
+			skeleton_slots[1].hold = holding
 		else:
 			cur_skelly.arms[0] = holding
+			skeleton_slots[0].hold = holding
 	elif holding is RobotLeg:
 		if right:
 			cur_skelly.legs[1] = holding
+			skeleton_slots[3].hold = holding
 		else:
 			cur_skelly.legs[0] = holding
+			skeleton_slots[2].hold = holding
 	elif holding is RobotAugment:
 		pass
 	elif holding is RobotSkeleton:
-		inv_database.pickup(cur_skelly)
+		if holding.type != "Default":
+			inv_database.pickup(cur_skelly)
 		cur_skelly = holding
+	
+	
+		
+		
 
 func reload_slots(): #not loading.
 	var cur_slot: InvSlot
