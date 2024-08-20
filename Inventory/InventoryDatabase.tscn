@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmooe1628vo1y"]
+[gd_scene load_steps=11 format=3 uid="uid://bmooe1628vo1y"]
 
 [ext_resource type="Script" path="res://Inventory/InventoryDatabase.gd" id="1_kpvxv"]
 [ext_resource type="Resource" uid="uid://b081nwewto1mn" path="res://Robot/Skeletons/MakeshiftBipedal.tres" id="2_goo0s"]
@@ -6,9 +6,13 @@
 [ext_resource type="Resource" uid="uid://di4glhrmsc5ff" path="res://Robot/Limbs/Legs/MakeshiftLeg.tres" id="4_ybkst"]
 [ext_resource type="Resource" uid="uid://canq0lhp8h867" path="res://Inventory/DefaultInvData.tres" id="5_hgtph"]
 [ext_resource type="Resource" uid="uid://c6mbuv2usj2vh" path="res://Robot/Skeletons/SuperBipedal.tres" id="6_ogcig"]
+[ext_resource type="Resource" uid="uid://pshmp2388fhw" path="res://Robot/Skeletons/AdequateBipedal2.tres" id="7_p4wpu"]
+[ext_resource type="Resource" uid="uid://c5p870r4re5li" path="res://Robot/Skeletons/AdequateBipedal1.tres" id="8_dglou"]
+[ext_resource type="Resource" uid="uid://b0bb0fdyh5tgw" path="res://Robot/Skeletons/AdequateBipedal3.tres" id="9_qyq78"]
+[ext_resource type="Resource" uid="uid://dordhcwskxkyi" path="res://Robot/Skeletons/AdequateBipedal4.tres" id="10_8vt2x"]
 
 [node name="InventoryDatabase" type="Node"]
 script = ExtResource("1_kpvxv")
 inf_inventory = Array[Resource("res://Robot/AbstractRobotPiece.gd")]([ExtResource("2_goo0s"), ExtResource("3_mnukb"), ExtResource("4_ybkst")])
 inventory = ExtResource("5_hgtph")
-skeletons = Array[Resource("res://Robot/Skeletons/RobotSkeleton.gd")]([ExtResource("2_goo0s"), ExtResource("6_ogcig")])
+skeletons = Array[Resource("res://Robot/Skeletons/RobotSkeleton.gd")]([ExtResource("2_goo0s"), ExtResource("6_ogcig"), ExtResource("7_p4wpu"), ExtResource("8_dglou"), ExtResource("9_qyq78"), ExtResource("10_8vt2x")])

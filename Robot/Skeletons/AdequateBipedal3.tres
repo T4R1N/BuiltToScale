@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="RobotSkeleton" load_steps=3 format=3 uid="uid://b0bb0fdyh5tgw"]
+
+[ext_resource type="Script" path="res://Robot/Skeletons/RobotSkeleton.gd" id="1_1hl6n"]
+[ext_resource type="Texture2D" uid="uid://2ugl7wwjqfst" path="res://Robot/Skeletons/HRSkeleton.png" id="2_qwsnf"]
+
+[resource]
+script = ExtResource("1_1hl6n")
+arms = Array[Resource("res://Robot/Limbs/Arms/RobotArm.gd")]([null, null])
+legs = Array[Resource("res://Robot/Limbs/Legs/RobotLeg.gd")]([null, null])
+augments = Array[Resource("res://Robot/Augments/RobotAugment.gd")]([null, null])
+designation = "Bipedal"
+mass = 3.0
+durability = 6.0
+texture = ExtResource("2_qwsnf")
+type = "Adequate"
