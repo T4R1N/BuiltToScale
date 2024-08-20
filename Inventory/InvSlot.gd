@@ -40,6 +40,7 @@ func move_piece(right: bool):
 			build_stage.set_skel_val(hold, right, which_inv_type, self)
 		"Skeleton":
 			if not hold is RobotSkeleton:
+				print(hold)
 				inv_database.pickup(hold)
 				set_piece(null)
 				build_stage.set_skel_val(hold, right, which_inv_type, self)

@@ -8,6 +8,7 @@ var cur_skelly: RobotSkeleton
 @export var skeletons: Array[RobotSkeleton]
 
 func pickup(piece: AbstractRobotPiece):
+	print(piece)
 	if not piece == null:
 		if piece.type == "Default" && piece is RobotSkeleton:
 			pass
@@ -15,7 +16,6 @@ func pickup(piece: AbstractRobotPiece):
 			for i in range(inventory.inv_data.size()):
 				if inventory.inv_data[i] == null:
 					inventory.inv_data[i] = piece
-					print(inventory.inv_data[i])
 					break
 
 func remove_piece(piece: AbstractRobotPiece, place_id: int):
@@ -34,7 +34,7 @@ func death_cleanup():
 
 func hold_skeleton(skelly: RobotSkeleton):
 	cur_skelly = skelly
-	print(cur_skelly)
+
 
 func _ready():
 	print(inventory)
