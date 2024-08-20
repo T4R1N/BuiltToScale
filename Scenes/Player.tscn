@@ -385,6 +385,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("2_c61r2")
 
 [node name="Arm1" type="Sprite2D" parent="SkeletonSprite"]
+z_index = 1
 position = Vector2(-4.75, -7.5)
 rotation = -2.86083
 texture = ExtResource("3_jx6rc")

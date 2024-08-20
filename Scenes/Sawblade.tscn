@@ -52,3 +52,10 @@ max_distance = 700.0
 max_polyphony = 10
 panning_strength = 2.0
 bus = &"SFX"
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

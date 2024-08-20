@@ -6,7 +6,11 @@ func _ready():
 	$SawFrames.play("default")
 
 func _physics_process(delta):
-	$sfx.play()
 	for body in $Area2D.get_overlapping_bodies():
 		if body is Player:
 			body.take_damage(damage)
+
+
+func _on_timer_timeout():
+	#pass # Replace with function body.
+	$sfx.play()
