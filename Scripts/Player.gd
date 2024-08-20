@@ -212,7 +212,7 @@ func _physics_process(delta):
 		DEAD = true
 	
 	if DEAD:
-		get_tree().reload_current_scene()
+		$"/root/Main".death()
 
 func set_canClimb(val: bool):
 	canClimb = val

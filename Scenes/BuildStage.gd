@@ -5,7 +5,7 @@ extends Node2D
 @onready var infinite_inventory = $CanvasLayer/Control/InfiniteInventory
 @onready var skeleton_inventory = $CanvasLayer/Control/SkeletonInventory
 
-
+@onready var inv_slot: PackedScene = preload("res://Inventory/InvSlot.tscn")
 @onready var skeleton_slots: Array[InvSlot] = [$CanvasLayer/Control/SkeletonInventory/LeftArm, $CanvasLayer/Control/SkeletonInventory/RightArm, $CanvasLayer/Control/SkeletonInventory/LeftLeg, $CanvasLayer/Control/SkeletonInventory/RightLeg]
 
 var cur_skelly: RobotSkeleton = preload("res://Robot/Skeletons/MakeshiftBipedal.tres")
@@ -177,10 +177,17 @@ func reload_slots(): #not loading.
 	var cur_slot: InvSlot
 	var slots = regular_inventory.get_children()
 	
+	
 	for i in range(slots.size()):
+		if inv_database.inventory.inv_data[i] != null and slots[i].hold == null:
+			print(inv_database.inventory.inv_data[i])
+			slots[i].hold = inv_database.inventory.inv_data[i]
+		
 		cur_slot = slots[i]
 		if cur_slot.hold != null:
 			cur_slot.set_sprite(cur_slot.hold.texture)
+		else:
+			cur_slot.set_sprite(null)
 
 	slots = infinite_inventory.get_children()
 	for i in range(slots.size()):
@@ -210,12 +217,19 @@ func reload_slots(): #not loading.
 	#		slots[i].set_sprite(slots[i].holding.texture)
 
 func reload():
-	load_sprites()
 	reload_slots()
+	load_sprites()
 	
 	
+func create_slots():
+	for i in range(inv_database.inventory.inv_data.size()):
+		var sl = inv_slot.instantiate()
+		regular_inventory.add_child(sl)
+		sl.place_id = i
 
 func _ready():
+	
+	create_slots()
 	load_slots()
 	load_sprites()
 	#for button in $ButtonList.get_children():

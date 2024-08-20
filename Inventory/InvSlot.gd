@@ -3,8 +3,10 @@ class_name InvSlot
 
 @export var hold: AbstractRobotPiece
 var which_inv_type: String = "Regular"
+var place_id: int
 
 @onready var build_stage = get_node("/root/Main/CurrentScene/BuildStage")
+@onready var inv_database = $/root/Main/InventoryDatabase
 
 signal action(move: bool)
 
@@ -33,11 +35,12 @@ func move_piece(right: bool):
 			build_stage.set_skel_val(hold, right, which_inv_type, self)
 			
 			set_piece(null)
+			inv_database.remove_piece(hold, place_id)
 		"Infinite":
 			build_stage.set_skel_val(hold, right, which_inv_type, self)
 		"Skeleton":
 			if not hold is RobotSkeleton:
-				build_stage.inv_database.pickup(hold)
+				inv_database.pickup(hold)
 				set_piece(null)
 				build_stage.set_skel_val(hold, right, which_inv_type, self)
 				

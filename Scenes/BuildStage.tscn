@@ -39,66 +39,6 @@ grow_horizontal = 0
 grow_vertical = 2
 columns = 5
 
-[node name="InvSlot" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
-[node name="InvSlot2" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
-[node name="InvSlot3" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
-[node name="InvSlot4" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
-[node name="InvSlot5" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
-[node name="InvSlot6" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
-[node name="InvSlot7" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
-[node name="InvSlot8" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
-[node name="InvSlot9" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
-[node name="InvSlot10" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
-[node name="InvSlot11" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
-[node name="InvSlot12" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
-[node name="InvSlot13" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
-[node name="InvSlot14" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
-[node name="InvSlot15" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
-[node name="InvSlot16" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
-[node name="InvSlot17" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
-[node name="InvSlot18" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
-[node name="InvSlot19" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
-[node name="InvSlot20" parent="CanvasLayer/Control/RegularInventory" instance=ExtResource("1_pcml4")]
-layout_mode = 2
-
 [node name="InfiniteInventory" type="GridContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = 6

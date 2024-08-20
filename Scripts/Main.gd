@@ -20,6 +20,10 @@ func go_to_scene(name_of_scene: String):
 	
 	$TransitionScreen.transition()
 
+func death():
+	$InventoryDatabase.death_cleanup()
+	go_to_scene("Build Stage")
+
 func _on_menu_begin():
 	go_to_scene("Build Stage")
 	$AudioAnimator.play("menu_fade_out")
